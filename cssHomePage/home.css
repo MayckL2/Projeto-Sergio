@@ -1,0 +1,48 @@
+.home{
+    /* margin-top: 100px; */
+    /* padding: 20px 100px; */
+    background-image: url(../img/header.png);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    
+}
+@media (max-width: 900px) {
+    .home{
+        background-position: -400px 0px;       
+    }
+}
+
+.home .box{
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.home .box div{
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 500px;
+    margin-left: 12vw;
+}
+
+.home .box div h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.home .box div a{
+    text-decoration: none;
+    color: orange;
+    border: solid;
+    padding: 3px 25px;
+    transition: all 0.5s;
+}
+.home .box div a:hover{
+    color: white;
+    border: solid transparent;
+    background-color: orange;
+}

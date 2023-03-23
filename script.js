@@ -1,0 +1,24 @@
+let menu = document.querySelector(".menu")
+let retratil = document.querySelector(".retratil")
+
+// verifica o temanho do dispositivo
+function checaDispositivo(){
+    let tela = window.innerWidth
+
+    if(tela <= 800){
+        menu.style.display = 'block'
+    }else{
+        menu.style.display = 'none'
+    }
+}
+
+// exibe menu no mobile
+function chamaMenu(){
+    if(retratil.style.right == '-200px'){
+        menu.style.rotate= '90deg'
+        retratil.style.right= '0px'
+    }else{
+        menu.style.rotate= '0deg'
+        retratil.style.right = '-200px'
+    }
+}
