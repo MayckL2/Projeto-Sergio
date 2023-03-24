@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 -- Table `estacionamento`.`registros`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
-  `PK_Registro` INT NOT NULL,
+  `PK_Registro` INT NOT NULL AUTO_INCREMENT,
   `FK_Usuario` INT UNSIGNED NOT NULL,
   `Nome` VARCHAR(200) NOT NULL,
   `Telefone` CHAR(11) NOT NULL,
