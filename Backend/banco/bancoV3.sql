@@ -30,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`usuarios` (
 )
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `estacionamento`.`registros`
 -- -----------------------------------------------------
@@ -39,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
   `FK_Usuario` INT UNSIGNED NOT NULL,
   `Nome` VARCHAR(200) NOT NULL,
   `Telefone` CHAR(11) NOT NULL,
-  `Placa` VARCHAR(45) NOT NULL,
+  `Placa` CHAR(7) NOT NULL,
   `Data` DATE NOT NULL,
   `Horario_ent` TIME NOT NULL,
   `Horario_saida` TIME NULL,
@@ -51,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 )
-ENGINE = InnoDB;
 
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

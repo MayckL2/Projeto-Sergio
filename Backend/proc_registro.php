@@ -2,6 +2,12 @@
 session_start();
 include_once("conexao.php");
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Olá, " . $_SESSION['id'] . "!";
+} else {
+    echo "Por favor, faça o login primeiro.";
+}
+
 $nome = htmlspecialchars($_POST['nome']);
 $telefone = htmlspecialchars($_POST['telefone']);
 $placa = htmlspecialchars($_POST['placa']);
@@ -13,7 +19,7 @@ $telefone = str_replace($replaceTel, '', $telefone);
 
 $result_empresa = "INSERT INTO registros
 (PK_Registro, FK_Usuario, Nome, Telefone, Placa, Data, Horario_ent)
-VALUES (default, 1, '$nome', '$telefone', '$placa', '$hoje', '$hora')";
+VALUES (default, '".$_SESSION['id']."' , '$nome', '$telefone', '$placa', '$hoje', '$hora')";
 
 $resultado_empresa = mysqli_query($conn, $result_empresa);
 

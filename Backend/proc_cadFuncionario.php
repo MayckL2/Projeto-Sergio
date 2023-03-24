@@ -5,7 +5,7 @@ include_once("conexao.php");
 $nome = htmlspecialchars($_POST['nome']);
 $sobrenome = htmlspecialchars($_POST['sobrenome']);
 $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_EMAIL);
-$senha = hash("sha256", htmlspecialchars($_POST['senha']));
+$senha = hash("sha512", htmlspecialchars($_POST['senha']));
 $cpf = htmlspecialchars($_POST['cpf']);
 
 $cpf = str_replace('.', '', $cpf);
@@ -56,12 +56,12 @@ if ($certo1 && $certo2) {
 
     if (mysqli_insert_id($conn)) {
         $_SESSION['msg'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
-        header("Location: index.php");
+        header("Location: lista.php");
     } else {
         $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
-        header('Location: index.php');
+        header('Location: cadFuncionario.php');
     }
 } else {
     $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
-    header('Location: index.php');
+    header('Location: cadFuncionario.php');
 }
