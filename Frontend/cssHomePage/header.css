@@ -12,6 +12,8 @@ header{
     top: 0px;
     width: 100vw;
     z-index: 1;
+    /* background-color: rgba(127, 255, 212, 0.253); */
+    border-radius: 0px 20px;
 }
 
 header .logo img{

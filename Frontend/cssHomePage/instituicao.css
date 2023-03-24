@@ -1,0 +1,42 @@
+.inst{
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/Group\ 37.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.inst div{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px 0px;
+}
+
+.inst div h2{
+  color: #69D5E7;
+  font-size: 40px;
+  text-align: center;
+}
+
+.inst div p{
+  text-align: center;
+  color: white;
+}
+
+.inst div a{
+  text-decoration: none;
+  color: white;
+  border: solid;
+  padding: 5px 20px;
+  transition: all 0.5s;
+}
+
+.inst div a:hover{
+  color: black;
+  border: solid transparent;
+  background-color: white;
+}

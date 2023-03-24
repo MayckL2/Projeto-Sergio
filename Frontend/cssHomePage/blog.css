@@ -1,0 +1,73 @@
+.blog{
+  background-color: #636363;
+}
+
+.carImg{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carImg div{
+  background-color: white;
+  width: 25vw;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+@media (max-width: 800px) {
+  .carImg div{
+    display: none;
+  }
+}
+
+.carImg img{
+  width: 50vw;
+  margin-left: 100px;
+  z-index: 2;
+  object-fit: contain;
+}
+
+.descBlog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+.descBlog h2{
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+
+.descBlog p{
+  text-align: center;
+  color: white;
+}
+
+.descBlog a{
+  color: black;
+  text-decoration: none;
+  border: solid;
+  padding: 5px 20px;
+  transition: all 0.5s;
+}
+
+.descBlog a:hover{
+  border: solid transparent;
+  background-color: white;
+}
+
+.barra{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.barra div{
+  width: 20px;
+  height: 80%;
+  background-color: orange;
+}
