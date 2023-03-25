@@ -8,6 +8,11 @@
 </head>
 <body>
 
+
+    <a href="cadFuncionario.php">CADASTRAR FUNCIONÁRIO</a>
+    <a href="registro.php">NOVA ENTRADA</a>
+
+
     <?php
       session_start();
       include_once('conexao.php');
@@ -26,6 +31,7 @@
       } else {
         echo "Por favor, faça o login primeiro.";
       }
+
     ?>
 
     
