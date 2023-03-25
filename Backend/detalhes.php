@@ -19,7 +19,7 @@
     $gethora = intval($diferenca ->format('%H'));
     $getminuto = intval($diferenca -> format('%I'));
 
-    
+    //funfou
 
     // if (($gethora == 0 && $getminuto >= 16) || ($gethora == 1 && $getminuto == 0)){
     //     $valortotal = 27;
