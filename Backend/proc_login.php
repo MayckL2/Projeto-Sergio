@@ -13,7 +13,7 @@
         if ($row = $resultado -> fetch_row()){
             $_SESSION['loggedin'] = true;
             $_SESSION['id'] = $row[2]; // $username coming from the form, such as $_POST['username']
-            header("Location: registro.php");
+            header("Location: lista.php");
         } else {
             echo "Login não efetuado.";
         }
