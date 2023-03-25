@@ -4,13 +4,16 @@ body{
 
 header{
     height: 100px;
-    border-bottom: solid;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     position: fixed;
+    top: 0px;
     width: 100vw;
+    z-index: 1;
+    /* background-color: rgba(127, 255, 212, 0.253); */
+    border-radius: 0px 20px;
 }
 
 header .logo img{
@@ -22,6 +25,21 @@ header ul{
     display: flex;
     list-style: none;
     gap: 30px;
+
+}
+@media (max-width: 800px) {
+    header ul{
+        position: absolute;
+        top: 90px;
+        right: -200px;
+        flex-direction: column;
+        background-color: #424242;
+        padding: 30px;
+        border-radius: 20px 0px 0px 20px;
+        transition: all 0.5s;
+        z-index: 99;
+        
+    }
 }
 
 header .menuItens{
@@ -47,3 +65,13 @@ header ul li a:hover{
     color: white;
     border: solid transparent;
 }
+
+header .menu{
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
