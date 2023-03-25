@@ -1,7 +1,7 @@
 <?php
-$host = "localhost:3307";
-$user = "root";
-$pass = '';
+$host = "localhost";
+$user = "teste";
+$pass = 'P4$sword';
 $dbname = "estacionamento";
 
 // Criar a conexao com o Banco de Dados

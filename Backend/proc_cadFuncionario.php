@@ -56,7 +56,7 @@ if ($certo1 && $certo2) {
 
     if (mysqli_insert_id($conn)) {
         $_SESSION['msg'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
-        header("Location: lista.php");
+        header("Location: login.php");
     } else {
         $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
         header('Location: cadFuncionario.php');

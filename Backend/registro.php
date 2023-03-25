@@ -17,13 +17,13 @@
     ?>
     <form action="proc_registro.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome"><br><br>
+        <input type="text" id="nome" name="nome" autofocus required><br><br>
 
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone"><br><br>
+        <input type="text" id="telefone" name="telefone" required><br><br>
 
         <label for="placa">Placa:</label>
-        <input type="text" id="placa" name="placa"><br><br>
+        <input type="text" id="placa" name="placa" required><br><br>
 
         <input type="submit" value="Enviar">
     </form>

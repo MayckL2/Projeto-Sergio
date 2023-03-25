@@ -25,7 +25,7 @@ $resultado_empresa = mysqli_query($conn, $result_empresa);
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "<p style= 'color:green;'>Registro realizado com sucesso</p>";
-    header("Location: registro.php");
+    header("Location: lista.php");
 } else {
     $_SESSION['msg'] = "<p style='color:red;'>Registro não foi realizado</p>";
     header('Location: registro.php');

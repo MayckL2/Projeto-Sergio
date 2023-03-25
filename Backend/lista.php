@@ -8,24 +8,37 @@
 </head>
 <body>
 
+
+    <a href="cadFuncionario.php">CADASTRAR FUNCIONÁRIO</a>
+    <a href="registro.php">NOVA ENTRADA</a>
+
+
     <?php
       session_start();
       include_once('conexao.php');
 
-      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NULL");
         
-        $rows = $resultado -> fetch_assoc();
-        
-        foreach ($rows as &$row) {
-          print_r($row);
-          // row[0] puxa o id
-          echo "<a href='detalhes.php?id=$row[0]'>Detalhes</a><br>";
+        $rows = $resultado -> fetch_all();
+
+        foreach ($rows as $row) {
+          echo "
+          <div>
+            <p>Nome: $row[2]</p>
+            <p>Horário de entrada: $row[6]</p>
+            <p>Placa: $row[4]</p>
+            <!-- row[0] puxa o id -->
+            <a href='detalhes.php?id=$row[0]'>Detalhes</a><br>
+            <hr>
+          </div>
+          ";
         }
 
       } else {
         echo "Por favor, faça o login primeiro.";
       }
+
     ?>
 
     
