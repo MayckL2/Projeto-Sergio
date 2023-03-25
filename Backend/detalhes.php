@@ -19,16 +19,41 @@
     $gethora = intval($diferenca ->format('%H'));
     $getminuto = intval($diferenca -> format('%I'));
 
-    $valortotal = 0;
+    
 
-    if (($gethora == 0 && $getminuto >= 16) || ($gethora == 1 && $getminuto == 0)){
-        $valortotal = 27;
-    } elseif (($gethora == 1 && $getminuto >= 1) || ($gethora == 2 && $getminuto == 0)){
-        $valortotal = 32;
-    } else {
-        if($getminuto > 0) {
-            $gethora += 1;
+    // if (($gethora == 0 && $getminuto >= 16) || ($gethora == 1 && $getminuto == 0)){
+    //     $valortotal = 27;
+    // } elseif (($gethora == 1 && $getminuto >= 1) || ($gethora == 2 && $getminuto == 0)){
+    //     $valortotal = 32;
+    // } else {
+    //     if($getminuto > 0) {
+    //         $gethora += 1;
+    //     }
+    //     $valortotal = 32 + ($gethora - 2) * 9;
+    // }
+
+    if ($gethora == 0 ){ 
+        
+        if ($getminuto < 16){
+            $valortotal = 0;
+        } elseif ($getminuto >= 16) {
+            $valortotal = 27;
         }
+
+    } elseif ($gethora == 1){
+
+        if ($getminuto == 0){
+            $valortotal = 27;
+        } elseif ($getminuto >= 1){
+            $valortotal = 32;
+        }
+
+    } elseif ($gethora == 2 && $getminuto == 0){
+
+        $valortotal = 32;
+
+    } elseif ($gethora >= 2 && $getminuto > 0){
+
         $valortotal = 32 + ($gethora - 2) * 9;
     }
 
