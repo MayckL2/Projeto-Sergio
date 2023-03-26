@@ -1,9 +1,3 @@
-<?php
-  session_start();
-  include_once("../../rotas.php");
-  include_once($connRoute);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,11 +11,17 @@
 <body>
 
 
-  <a href="<?php echo $cadFunRoute; ?>">CADASTRAR FUNCIONÁRIO</a>
-  <a href="<?php echo $registroRoute; ?>">NOVA ENTRADA</a>
-
 
   <?php
+  session_start();
+  include_once("../../rotas.php");
+  include_once($connRoute);
+  if ($_SESSION['tipo'] == 'Adm') {
+    echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
+  }
+  echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
+
+
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NULL");
 

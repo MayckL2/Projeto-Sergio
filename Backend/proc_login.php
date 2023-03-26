@@ -8,13 +8,14 @@ $senha = htmlspecialchars($_POST['senha']);
 $hash = hash("sha512", $senha);
 
 try {
-    $resultado = mysqli_query($conn, "SELECT Login, Senha, PK_Usuario FROM usuarios
+    $resultado = mysqli_query($conn, "SELECT Login, Senha, PK_Usuario, Tipo FROM usuarios
     WHERE Login = '$login' and Senha = '$hash'");
 
 
     if ($row = $resultado->fetch_row()) {
         $_SESSION['loggedin'] = true;
         $_SESSION['id'] = $row[2]; // $username coming from the form, such as $_POST['username']
+        $_SESSION['tipo'] = $row[3];
         header("Location: " . $listaRoute);
     } else {
         echo "Login não efetuado.";
