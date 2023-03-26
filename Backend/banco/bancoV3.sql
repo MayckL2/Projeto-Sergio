@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`usuarios` (
   `Nome` VARCHAR(200) NOT NULL,
   `Sobrenome` VARCHAR(200) NOT NULL,
   `CPF` CHAR(11) NOT NULL,
-  `Login` VARCHAR(200) NOT NULL,
+  `Login` VARCHAR(200) NOT NULL UNIQUE,
   `Senha` VARCHAR(200) NOT NULL,
   `Data_Criacao` DATETIME NOT NULL,
   `Tipo` ENUM('Adm', 'Fun') NOT NULL,
