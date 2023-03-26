@@ -107,7 +107,7 @@ if ($gethora == 0) {
 
             <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
             <p id="horaSaida">
-                <?php echo $hora; ?>
+                <?php echo $hhh; ?>
             </p>
 
             <label for="valor">VALOR A PAGAR :</label>

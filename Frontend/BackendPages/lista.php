@@ -20,6 +20,7 @@
     echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
   }
   echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
+  echo "<a href='$procFechamentoRoute'>FECHAMENTO</a>";
 
 
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
