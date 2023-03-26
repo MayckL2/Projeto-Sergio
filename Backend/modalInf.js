@@ -1,23 +1,23 @@
-// Get the modal
+// Pega a div do modal
 var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+// Pega o botão que ativa o modal
 var btn = document.getElementById("btn");
 
-// Get the <span> element that closes the modal
+// Pega o <span> que fecha o modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
+// Quando o usuário clicar no botão de ativar, o modal aparece
 btn.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// Quando o usuário clicar no span de fechar, o modal se torna none
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// Quando o usuário clicar fora do modal, ele fecha
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
