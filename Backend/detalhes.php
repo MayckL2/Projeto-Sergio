@@ -2,6 +2,8 @@
     session_start();
     include_once('conexao.php');
 
+    date_default_timezone_set('America/Sao_Paulo'); 
+
     $id = $_GET['id'];
 
     $comando = "select * from registros where PK_registro = '$id'";
@@ -9,7 +11,7 @@
 
     $array = mysqli_fetch_assoc($resultado); 
     // retorna Array ( [PK_Registro] => 4 [FK_Usuario] => 1 [Nome] => michael [Telefone] => 11978969547 [Placa] => acs2134 [Data] => 2023-03-24 [Horario_ent] => 15:01:21 [Horario_saida] => [Valor_pago] => )
-
+    $hhh = date('H:i:s');
     $hora = date('H:i');
     $hh = new DateTime($hora);
     $horario1 = new DateTime($array['Horario_ent']);
@@ -70,28 +72,40 @@
 </head>
 <body>
 
-    <div>
-        <label for="nome">NOME :</label>
-        <p id="nome"><?php echo $array['Nome']; ?></p>
+    <form action="proc_detalhe.php" method="post">
+        <input type="hidden" value=<?php echo $id ?> name="id">
+        <input type="hidden" value=<?php echo $hhh ?> name="horasaida">
+        <input type="hidden" value=<?php echo $valortotal ?> name="valor">
+        <div>
+            <label for="nome">NOME :</label>
+            <p id="nome"><?php echo $array['Nome']; ?></p>
 
-        <label for="telefone">TELEFONE :</label>
-        <p id="telefone"><?php echo $array['Telefone']; ?></p>
+            <label for="telefone">TELEFONE :</label>
+            <p id="telefone"><?php echo $array['Telefone']; ?></p>
 
-        <label for="placa">PLACA :</label>
-        <p id="placa"><?php echo $array['Placa']; ?></p>
+            <label for="placa">PLACA :</label>
+            <p id="placa" name="placa"><?php echo $array['Placa']; ?></p>
 
-        <label for="data">DATA :</label>
-        <p id="data"><?php echo $array['Data']; ?></p>
+            <label for="data">DATA :</label>
+            <p id="data"><?php echo $array['Data']; ?></p>
 
-        <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
-        <p id="horaEntrada"><?php echo $array['Horario_ent']; ?></p>
+            <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
+            <p id="horaEntrada"><?php echo $array['Horario_ent']; ?></p>
 
-        <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
-        <p id="horaSaida"><?php echo $hora; ?></p>
+            <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
+            <p id="horaSaida"><?php echo $hora; ?></p>
 
-        <label for="valor">VALOR A PAGAR :</label>
-        <p id="valor"><?php echo $valortotal; ?></p>
-    </div>
+            <label for="valor">VALOR A PAGAR :</label>
+            <p id="valor"><?php echo $valortotal; ?></p>
+            
+            <input type="submit" value="CONFIRMAR">
+
+            <a href="lista.php">VOLTAR</a>
+        </div>
+
+
+    </form>
+    
 
     
 </body>

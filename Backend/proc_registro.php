@@ -2,6 +2,8 @@
 session_start();
 include_once("conexao.php");
 
+date_default_timezone_set('America/Sao_Paulo');
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Olá, " . $_SESSION['id'] . "!";
 } else {
