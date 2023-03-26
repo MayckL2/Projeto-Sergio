@@ -38,7 +38,7 @@
             <p>Horário de saida: $row[6]</p>
             <p>Placa: $row[4]</p>
             <!-- row[0] puxa o id -->
-            <a href='$detalhesRoute?id=$row[0]'>Detalhes</a><br>
+            <a href='$procCalculoRoute?id=$row[0]'>Detalhes</a><br>
             <hr>
           </div>
           ";

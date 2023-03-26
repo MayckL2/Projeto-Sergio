@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../../rotas.php"); // Inclui o arquivo de rotas
+include_once("../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexao
 date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
 
@@ -76,6 +76,9 @@ if ($gethora == 0) {
     // será cobrado 32 + 9 * horas a mais de 2 horas
     $valortotal = 32 + ($gethora - 2) * 9;
 }
+
+header("Location: " . $detalhesRoute);
+$_SESSION['result'] = $valortotal;
 
 
 ?>

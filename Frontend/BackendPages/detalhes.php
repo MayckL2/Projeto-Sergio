@@ -11,14 +11,16 @@
 <body>
     <?php
     session_start();
-
+    include_once("../../rotas.php");
+    
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];
+        $hhh = date("H:i:s");
+        $valortotal = $_SESSION['result'];
+
         echo '
             <form action="' . $procDetalhesRoute . '" method="post">
-            <input type="hidden" value=<?php echo $id ?> name="id">
-            <input type="hidden" value=<?php echo $hhh ?> name="horasaida">
-            <input type="hidden" value=<?php echo $valortotal ?> name="valor">
+        
             <div>
                 <label for="nome">NOME :</label>
                 <p id="nome">
@@ -56,7 +58,7 @@
                 </p>
                 <input type="submit" value="CONFIRMAR">
     
-                <a href="$listaRoute">VOLTAR</a>
+                <a href= ' . $listaRoute . '>VOLTAR</a>
             </div>
     
         </form>';
