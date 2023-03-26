@@ -14,8 +14,8 @@
     session_start();
     include_once("../../rotas.php"); // Inclui o arquivo de rotas
     include_once($connRoute); // Inclui o arquivo de conexao
-
     
+
     // Verifica se o usuário logado é adm
     if ($_SESSION['tipo'] == "Adm") {
         if (isset($_SESSION['msg'])) {
@@ -66,7 +66,7 @@
         // fim da tela
     } else {
         header("Location: " . $listaRoute);
-        
+
     }
     ?>
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,61 +11,62 @@
 <body>
     <?php
     session_start();
-    
-         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-            $array = $_SESSION['array'];
-            echo `<form action= '$procDetalhesRoute' method="post">
+
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        $array = $_SESSION['array'];
+        echo '
+            <form action="' . $procDetalhesRoute . '" method="post">
             <input type="hidden" value=<?php echo $id ?> name="id">
             <input type="hidden" value=<?php echo $hhh ?> name="horasaida">
             <input type="hidden" value=<?php echo $valortotal ?> name="valor">
             <div>
                 <label for="nome">NOME :</label>
                 <p id="nome">
-                    ` . $array['Nome'] . `
+                    ' . $array['Nome'] . '
                 </p>
     
                 <label for="telefone">TELEFONE :</label>
                 <p id="telefone">
-                    ` . $array['Telefone'] . `
+                    ' . $array['Telefone'] . '
                 </p>
     
                 <label for="placa">PLACA :</label>
                 <p id="placa">
-                    `. $array['Placa'] . `
+                    ' . $array['Placa'] . '
                 </p>
     
                 <label for="data">DATA :</label>
                 <p id="data">
-                    ` . $array['Data'] . `
+                    ' . $array['Data'] . '
                 </p>
     
                 <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
                 <p id="horaEntrada">
-                    ` . $array['Horario_ent'] . `
+                    ' . $array['Horario_ent'] . '
                 </p>
     
                 <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
                 <p id="horaSaida">
-                    ` . $hhh . `
+                    ' . $hhh . '
                 </p>
     
                 <label for="valor">VALOR A PAGAR :</label>
                 <p id="valor">
-                    ` . $valortotal . `
+                    ' . $valortotal . '
                 </p>
                 <input type="submit" value="CONFIRMAR">
     
                 <a href="$listaRoute">VOLTAR</a>
             </div>
     
-        </form>`;
+        </form>';
 
-         } else  {
-            header("Location: " . $loginRoute);
-         }
+    } else {
+        header("Location: " . $loginRoute);
+    }
     ?>
 
-    
+
 </body>
 
 </html>

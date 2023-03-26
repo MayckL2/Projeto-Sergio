@@ -47,10 +47,7 @@
   } else {
     echo "Por favor, faça o login primeiro.";
     header("Location: " . $loginRoute);
-  }
-
-  ?>
-
+  }?>
 
 </body>
 

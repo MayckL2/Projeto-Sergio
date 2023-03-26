@@ -15,31 +15,30 @@
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
-    include_once("../../rotas.php");  // Inclui o arquivo de rotas
+    include_once("../../rotas.php"); // Inclui o arquivo de rotas
     include_once($connRoute); // Inclui o arquivo de conexao
-
+    
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        echo '
+        <form action="' . $procRegistroRoute . '"method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" autofocus required><br><br>
 
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required><br><br>
 
-        echo `<form action="<?php echo $procRegistroRoute; ?>" method="POST">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" autofocus required><br><br>
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" required><br><br>
 
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" required><br><br>
-
-                <label for="placa">Placa:</label>
-                <input type="text" id="placa" name="placa" required><br><br>
-
-                <input type="submit" value="Enviar">
-            </form>`;
+            <input type="submit" value="Enviar">
+        </form>';
     } else {
         header("Location: " . $loginRoute);
     }
     ?>
 
-    
-    
+
+
 
 </body>
 

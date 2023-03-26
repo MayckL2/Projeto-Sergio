@@ -1,9 +1,11 @@
 <?php
-$root = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/Projeto-Sergio" . "/";
+// $root = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/Projeto-Sergio" . "/";
+$root = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/";
 $rootBack = $root . "Backend/";
 $rootFront = $root . "Frontend/";
 $rootBackPages = $rootFront . "BackendPages/";
-$connRoute = $_SERVER['DOCUMENT_ROOT'] . '/Projeto-Sergio/Backend/conexao.php';
+// $connRoute = $_SERVER['DOCUMENT_ROOT'] . '/Projeto-Sergio/Backend/conexao.php';
+$connRoute = $_SERVER['DOCUMENT_ROOT'] . '/Backend/conexao.php';
 
 $loginRoute = $rootBackPages . "login.php";
 $listaRoute = $rootBackPages . "lista.php";

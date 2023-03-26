@@ -18,7 +18,6 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
     <form action="<?php echo $procLoginRoute; ?>" method="post">
 
-
         <label for="login">LOGIN: </label>
         <input type="text" name="login" placeholder="Digite seu nome de login">
 
@@ -28,7 +27,6 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
         <input type="submit" value="ENTRAR">
         <input type="reset" value="LIMPAR CAMPOS">
-
 
     </form>
 
