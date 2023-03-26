@@ -5,7 +5,6 @@ $pass = '';
 $dbname = "estacionamento";
 
 // Criar a conexao com o Banco de Dados
-
 try {
     $conn = mysqli_connect($host, $user, $pass, $dbname);
 } catch (Exception $e) {

@@ -1,10 +1,8 @@
 <?php
-include_once("../../rotas.php");
-include_once($connRoute);
 session_start();
+include_once("../../rotas.php"); // Inclui o arquivo de rotas
+include_once($connRoute); // Inclui o arquivo de conexao
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
