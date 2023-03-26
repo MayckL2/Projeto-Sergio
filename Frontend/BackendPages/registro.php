@@ -14,8 +14,10 @@
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
     }
+    include_once("../../rotas.php");
+    include_once($connRoute);
     ?>
-    <form action="proc_registro.php" method="POST">
+    <form action="<?php echo $procRegistroRoute; ?>" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" autofocus required><br><br>
 

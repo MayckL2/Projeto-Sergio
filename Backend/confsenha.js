@@ -4,12 +4,12 @@ var senha = document.getElementsByName('senha')[0]
 confsenha.addEventListener('input', conferir)
 senha.addEventListener('input', conferir)
 
-function conferir() { 
-    if (senha.value == confsenha.value && senha.value != '' && confsenha.value != '') { 
+function conferir() {
+    if (senha.value == confsenha.value && senha.value != '' && confsenha.value != '') {
 
-        document.getElementById('enviar').disabled = false; 
+        document.getElementById('enviar').disabled = false;
 
-    } else { 
+    } else {
 
         document.getElementById('enviar').disabled = true;
 

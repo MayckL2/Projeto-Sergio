@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once("conexao.php");
-
+include_once("../rotas.php");
+include_once($connRoute);
 date_default_timezone_set('America/Sao_Paulo');
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -21,14 +21,14 @@ $telefone = str_replace($replaceTel, '', $telefone);
 
 $result_empresa = "INSERT INTO registros
 (PK_Registro, FK_Usuario, Nome, Telefone, Placa, Data, Horario_ent)
-VALUES (default, '".$_SESSION['id']."' , '$nome', '$telefone', '$placa', '$hoje', '$hora')";
+VALUES (default, '" . $_SESSION['id'] . "' , '$nome', '$telefone', '$placa', '$hoje', '$hora')";
 
 $resultado_empresa = mysqli_query($conn, $result_empresa);
 
 if (mysqli_insert_id($conn)) {
     $_SESSION['msg'] = "<p style= 'color:green;'>Registro realizado com sucesso</p>";
-    header("Location: lista.php");
+    header("Location: ". $listaRoute);
 } else {
     $_SESSION['msg'] = "<p style='color:red;'>Registro não foi realizado</p>";
-    header('Location: registro.php');
+    header("Location: " . $registroRoute);
 }

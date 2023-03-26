@@ -1,6 +1,7 @@
 <?php
 session_start();
-include_once("conexao.php");
+include_once("../rotas.php");
+include_once($connRoute);
 
 $nome = htmlspecialchars($_POST['nome']);
 $sobrenome = htmlspecialchars($_POST['sobrenome']);
@@ -56,12 +57,12 @@ if ($certo1 && $certo2) {
 
     if (mysqli_insert_id($conn)) {
         $_SESSION['msg'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
-        header("Location: login.php");
+        header("Location: ". $loginRoute);
     } else {
         $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
-        header('Location: cadFuncionario.php');
+        header("Location: " . $cadFunRoute);
     }
 } else {
     $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
-    header('Location: cadFuncionario.php');
+    header("Location: " . $cadFunRoute);
 }
