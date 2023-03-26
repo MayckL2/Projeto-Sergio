@@ -65,7 +65,8 @@
         ';
         // fim da tela
     } else {
-        echo "Acesso Restrito";
+        header("Location: " . $listaRoute);
+        
     }
     ?>
 

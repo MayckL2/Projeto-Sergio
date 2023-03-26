@@ -10,6 +10,7 @@ $listaRoute = $rootBackPages . "lista.php";
 $cadFunRoute = $rootBackPages . "cadFuncionario.php";
 $registroRoute = $rootBackPages . "registro.php";
 $detalhesRoute = $rootBackPages . "detalhes.php";
+$historicoRoute = $rootBackPages . "historico.php";
 
 
 $procLoginRoute = $rootBack . "proc_login.php";
@@ -17,6 +18,7 @@ $procCadFunRoute = $rootBack . "proc_cadFuncionario.php";
 $procRegistroRoute = $rootBack . "proc_registro.php";
 $procDetalhesRoute = $rootBack . "proc_detalhe.php";
 $procFechamentoRoute = $rootBack . "proc_fechamento.php";
+$procLogoffRoute = $rootBack . "proc_logoff.php";
 
 $confSenhaRoute = $rootBack . "confsenha.js";
 $modalInfRoute = $rootBack . "modalInf.js";

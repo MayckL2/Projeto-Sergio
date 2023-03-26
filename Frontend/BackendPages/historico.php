@@ -20,7 +20,8 @@
     if ($_SESSION['tipo'] == 'Adm') {
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
     }
-    echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
+    echo "<a href='$registroRoute'>NOVA ENTRADA</a><br>";
+    echo "<a href='$listaRoute'>ENTRADAS</a>";
 
     // Faz uma query para retornar todos os registros que não foram fechados
     $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NOT NULL");
@@ -33,8 +34,9 @@
       echo "
           <div>
             <p>Nome: $row[2]</p>
-            <p>Horário de entrada: $row[6]</p>
+            <p>Horário de entrada: $row[7]</p>
             <p>Placa: $row[4]</p>
+            <p>Valor Pago: $row[8]</p>
             <!-- row[0] puxa o id -->
             <a href='$detalhesRoute?id=$row[0]'>Detalhes</a><br>
             <hr>
@@ -44,6 +46,8 @@
 
   } else {
     echo "Por favor, faça o login primeiro.";
+    header("Location: " . $loginRoute);
+
   }
 
   ?>

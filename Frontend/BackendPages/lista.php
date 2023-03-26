@@ -20,7 +20,9 @@
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
     }
     echo "<a href='$registroRoute'>NOVA ENTRADA</a><br>";
-    echo "<a href='$procFechamentoRoute'>FECHAMENTO</a>";
+    echo "<a href='$procFechamentoRoute'>FECHAMENTO</a><br>";
+    echo "<a href='$historicoRoute'>HISTÓRICO</a><br>";
+    echo "<a href='$procLogoffRoute'>SAIR</a>";
 
     // Faz uma query para retornar todos os registros que não foram fechados
     $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NULL");
@@ -33,7 +35,7 @@
       echo "
           <div>
             <p>Nome: $row[2]</p>
-            <p>Horário de entrada: $row[6]</p>
+            <p>Horário de saida: $row[6]</p>
             <p>Placa: $row[4]</p>
             <!-- row[0] puxa o id -->
             <a href='$detalhesRoute?id=$row[0]'>Detalhes</a><br>
@@ -44,6 +46,7 @@
 
   } else {
     echo "Por favor, faça o login primeiro.";
+    header("Location: " . $loginRoute);
   }
 
   ?>
