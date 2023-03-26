@@ -10,6 +10,7 @@
 
 <body>
     <?php
+    session_start();
     if (isset($_SESSION['msg'])) {
         echo $_SESSION['msg'];
         unset($_SESSION['msg']);
@@ -17,6 +18,7 @@
     include_once("../../rotas.php");  // Inclui o arquivo de rotas
     include_once($connRoute); // Inclui o arquivo de conexao
     ?>
+    
     <form action="<?php echo $procRegistroRoute; ?>" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" autofocus required><br><br>

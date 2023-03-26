@@ -9,24 +9,26 @@
 </head>
 
 <body>
-
-
-
   <?php
   session_start();
-  include_once("../../rotas.php");
-  include_once($connRoute);
-  if ($_SESSION['tipo'] == 'Adm') {
-    echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
-  }
-  echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
-
-
+  include_once("../../rotas.php"); // Inclui o arquivo de rotas
+  include_once($connRoute); // Inclui o arquivo de conexao
+  
+  // Verifica se o usuário está logado
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    // Caso o tipo do usuário fo Adm, mostrará o botão que leva a página de cadastro
+    if ($_SESSION['tipo'] == 'Adm') {
+      echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
+    }
+    echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
+
+    // Faz uma query para retornar todos os registros que não foram fechados
     $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NULL");
 
+    // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
 
+    // Para cada index no array rows, cria um "card"
     foreach ($rows as $row) {
       echo "
           <div>

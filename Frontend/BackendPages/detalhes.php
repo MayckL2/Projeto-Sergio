@@ -69,7 +69,7 @@ if ($gethora == 0) {
     // será cobrado 32 reais
     $valortotal = 32;
 
-} elseif ($gethora >= 2 && $getminuto > 0) { 
+} elseif ($gethora >= 2 && $getminuto > 0) {
     // se for igual ou maior a 2 horas e mais de 0 minutos
 
     // será cobrado 32 + 9 * horas a mais de 2 horas
@@ -91,7 +91,7 @@ if ($gethora == 0) {
 
 <body>
 
-    <form action="<?php echo $procDetalhesRoute;?>" method="post">
+    <form action="<?php echo $procDetalhesRoute; ?>" method="post">
         <input type="hidden" value=<?php echo $id ?> name="id">
         <input type="hidden" value=<?php echo $hhh ?> name="horasaida">
         <input type="hidden" value=<?php echo $valortotal ?> name="valor">
@@ -132,7 +132,7 @@ if ($gethora == 0) {
             </p>
             <input type="submit" value="CONFIRMAR">
 
-            <a href="<?php echo $listaRoute;?>">VOLTAR</a>
+            <a href="<?php echo $listaRoute; ?>">VOLTAR</a>
         </div>
 
     </form>
