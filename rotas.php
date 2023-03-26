@@ -15,4 +15,6 @@ $procLoginRoute = $rootBack . "proc_login.php";
 $procCadFunRoute = $rootBack . "proc_cadFuncionario.php";
 $procRegistroRoute = $rootBack . "proc_registro.php";
 $procDetalhesRoute = $rootBack . "proc_detalhe.php";
+
 $confSenhaRoute = $rootBack . "confsenha.js";
+$modalInfRoute = $rootBack . "modalInf.js";

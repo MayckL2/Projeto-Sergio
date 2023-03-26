@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="../cssModalSenha/modal.css">
     <title>Document</title>
 </head>
 
@@ -35,15 +35,27 @@
         <input type="text" name="login" required><br><br>
 
         <label for="senha">Senha:</label>
-        <input type="password" name="senha"><br><br>
+        <input type="password" name="senha">
+        <button id="btn">I</button><br><br>
 
         <label for="senha">Digite novamente a senha:</label>
         <input type="password" name="confsenha"><br><br>
 
         <input type="submit" id="enviar" value="Enviar" disabled>
 
-        <script src="<?php echo $confSenhaRoute; ?>"></script>
     </form>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 símbolo</p>
+        </div>
+        
+    </div>
+    <script src="<?php echo $confSenhaRoute; ?>"></script>
+    <script src="<?php echo $modalInfRoute; ?>"></script>
 </body>
 
 </html>
