@@ -22,7 +22,20 @@
     echo "<a href='$registroRoute'>NOVA ENTRADA</a><br>";
     echo "<a href='$procFechamentoRoute'>FECHAMENTO</a><br>";
     echo "<a href='$historicoRoute'>HISTÓRICO</a><br>";
-    echo "<a href='$procLogoffRoute'>SAIR</a>";
+    echo "<a href='$procLogoffRoute'>SAIR</a><br><br>";
+
+    echo "
+    <form action='$listaRoute' method='get'>
+      <input type='text' placeholder='pesquise por placas' name='pesq'>
+      <input type='submit' value='pesquisar'>
+    </form>
+    ";
+
+    if (isset($_GET['pesq'])) {
+      $pesq = $_GET['pesq'];
+    } else {
+      $pesq = "";
+    }
 
     // Receber o número da página
     $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
@@ -36,7 +49,8 @@
 
     // Faz uma query para retornar todos os registros que não foram fechados
     $resultado = mysqli_query($conn, "SELECT * FROM registros
-    WHERE Horario_saida IS NULL LIMIT $inicio, $qnt_result_pg");
+    WHERE Horario_saida IS NULL AND Placa like '%$pesq%'
+    LIMIT $inicio, $qnt_result_pg");
 
     // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
