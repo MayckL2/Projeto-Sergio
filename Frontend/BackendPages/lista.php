@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link rel="stylesheet" href="cssBack/lista.css">
 </head>
 
 <body>
@@ -15,6 +17,9 @@
   include_once($connRoute);
 
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    echo "<div class='back'>";
+    
+    echo "<header>";
     // Caso o tipo do usuário fo Adm, mostrará o botão que leva a página de cadastro
     if ($_SESSION['tipo'] == 'Adm') {
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
@@ -24,12 +29,16 @@
     echo "<a href='$historicoRoute'>HISTÓRICO</a><br>";
     echo "<a href='$procLogoffRoute'>SAIR</a><br><br>";
 
+    echo "</header>";
+
     echo "
     <form action='$listaRoute' method='get'>
       <input type='text' placeholder='pesquise por placas' name='pesq'>
       <input type='submit' value='pesquisar'>
     </form>
     ";
+
+    echo "</div>";
 
     if (isset($_GET['pesq'])) {
       $pesq = $_GET['pesq'];
@@ -42,7 +51,7 @@
     $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
     // Setar a quantidade de items por pagina
-    $qnt_result_pg = 10;
+    $qnt_result_pg = 9;
 
     // Calcular o inicio visualização
     $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -55,19 +64,38 @@
     // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
 
+    // <fieldset>
+    //   <legend>Nome</legend>
+    //   <p>$row[2]</p>
+    // </fieldset>
+
     // Para cada index no array rows, cria um "card"
+    echo "<div class='cards'>";
     foreach ($rows as $row) {
       echo "
           <div>
-            <p>Nome: $row[2]</p>
-            <p>Horário de saida: $row[6]</p>
-            <p>Placa: $row[4]</p>
+
+            <fieldset>
+            <legend>Nome</legend>
+            <p>$row[2]</p>
+            </fieldset>
+          
+            <fieldset>
+            <legend>Horário de saida</legend>
+            <p>$row[6]</p>
+            </fieldset>
+          
+            <fieldset>
+            <legend>Placa</legend>
+            <p>$row[4]</p>
+            </fieldset>
+          
             <!-- row[0] puxa o id -->
-            <a href='$procCalculoRoute?id=$row[0]'>Detalhes</a><br>
-            <hr>
+            <a href='$procCalculoRoute?id=$row[0]'>Detalhes</a>
           </div>
           ";
     }
+    echo "</div>";
     echo "<br>";
 
     // Paginação - Somar a quantidade de usuários
@@ -81,28 +109,31 @@
 
     // Limitar os link antes depois
     $max_links = 2;
+    echo "<div class='pags'>";
+
     echo "<a href='$listaRoute?pagina=1'>Primeira</a> ";
 
     for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
-        if ($pag_ant >= 1) {
-            echo "<a href='$listaRoute?pagina=$pag_ant'>$pag_ant</a> ";
-        }
+      if ($pag_ant >= 1) {
+        echo "<a href='$listaRoute?pagina=$pag_ant'>$pag_ant</a> ";
+      }
     }
 
     echo $pagina;
 
     for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
-        if ($pag_dep <= $quantidade_pg) {
-            echo "<a href='$listaRoute?pagina=$pag_dep'>$pag_dep</a> ";
-        }
+      if ($pag_dep <= $quantidade_pg) {
+        echo "<a href='$listaRoute?pagina=$pag_dep'>$pag_dep</a> ";
+      }
     }
 
     echo " <a href='$listaRoute?pagina=$quantidade_pg'>Ultima</a>";
 
+    echo "</div>";
   } else {
     echo "Por favor, faça o login primeiro.";
     header("Location: " . $loginRoute);
-  }?>
+  } ?>
 
 </body>
 
