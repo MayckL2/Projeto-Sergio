@@ -24,8 +24,19 @@
     echo "<a href='$historicoRoute'>HISTÓRICO</a><br>";
     echo "<a href='$procLogoffRoute'>SAIR</a>";
 
+    // Receber o número da página
+    $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
+    $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+
+    // Setar a quantidade de items por pagina
+    $qnt_result_pg = 10;
+
+    // Calcular o inicio visualização
+    $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
     // Faz uma query para retornar todos os registros que não foram fechados
-    $resultado = mysqli_query($conn, "SELECT * FROM registros WHERE Horario_saida IS NULL");
+    $resultado = mysqli_query($conn, "SELECT * FROM registros
+    WHERE Horario_saida IS NULL LIMIT $inicio, $qnt_result_pg");
 
     // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
@@ -43,6 +54,36 @@
           </div>
           ";
     }
+    echo "<br>";
+
+    // Paginação - Somar a quantidade de usuários
+    $resultado_pg = mysqli_query($conn, "SELECT COUNT(PK_Registro) 
+    AS num_result FROM registros WHERE Horario_saida IS NULL");
+    $row_pg = mysqli_fetch_assoc($resultado_pg);
+    // echo $row_pg['num_result'];
+
+    // Quantidade de pagina
+    $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+
+    // Limitar os link antes depois
+    $max_links = 2;
+    echo "<a href='$listaRoute?pagina=1'>Primeira</a> ";
+
+    for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
+        if ($pag_ant >= 1) {
+            echo "<a href='$listaRoute?pagina=$pag_ant'>$pag_ant</a> ";
+        }
+    }
+
+    echo $pagina;
+
+    for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
+        if ($pag_dep <= $quantidade_pg) {
+            echo "<a href='$listaRoute?pagina=$pag_dep'>$pag_dep</a> ";
+        }
+    }
+
+    echo " <a href='$listaRoute?pagina=$quantidade_pg'>Ultima</a>";
 
   } else {
     echo "Por favor, faça o login primeiro.";

@@ -60,8 +60,8 @@
 
         </div>
         
-        <script src="<?php echo $confSenhaRoute; ?>"></script>
-        <script src="<?php echo $modalInfRoute; ?>"></script>
+        <script src='. $confSenhaRoute.'></script>
+        <script src='.$modalInfRoute.'></script>
         ';
         // fim da tela
     } else {
