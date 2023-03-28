@@ -4,9 +4,10 @@ include_once("../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexão
 
 // Pega os valores do registro que está sendo fechado
-$id = $_POST['id'];
-$hora_saida = $_POST['horasaida'];
-$value = $_POST['valor'];
+$dados = $_SESSION['array'];
+$id = $dados['PK_Registro'];
+$hora_saida = date("H:i:s");
+$value = $_SESSION['result'];
 
 // Atualiza o registro no banco de dados
 // com o horário de saída e o valor pago
@@ -22,3 +23,5 @@ if (mysqli_affected_rows($conn) > 0) {
 } else {
     echo '<p>Fechamento de registro nâo efetuado</p>';
 }
+
+?>

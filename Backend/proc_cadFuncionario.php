@@ -63,8 +63,22 @@ if ($dig2 == $vDig2) {
     $certo2 = true;
 }
 
+$comando = 'select Login from usuarios;';
+$result = mysqli_query($conn, $comando);
+
+$nlogin = $result -> fetch_all();
+
+$ext = 0;
+
+foreach ($nlogin as $nick){
+    if ($login == $nick){
+        $ext = 1;
+    }
+}
+
+
 // Se ambos digitos estiverem corretos
-if ($certo1 && $certo2) {
+if ($certo1 && $certo2 && $ext == 0) {
     // Será feito a inserção do novo usuário no banco
     $result_empresa = "INSERT INTO usuarios
     VALUES (default, '$cpf', '$nome', '$sobrenome','$login', '$senha', NOW(), 'Fun')";

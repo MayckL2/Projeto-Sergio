@@ -72,7 +72,9 @@ if ($gethora == 0) {
 
 } elseif ($gethora >= 2 && $getminuto > 0) {
     // se for igual ou maior a 2 horas e mais de 0 minutos
-
+    if ($getminuto > 0){
+        $gethora += 1;
+    }
     // será cobrado 32 + 9 * horas a mais de 2 horas
     $valortotal = 32 + ($gethora - 2) * 9;
 }
