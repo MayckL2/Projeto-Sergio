@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doc Hudson</title>
-    <link rel="icon" href="Frontend/img/Capturar-removebg-preview 1.png">
+    <link rel="icon" href="Frontend/FrontendPages/img/Capturar-removebg-preview 1.png">
     <link rel="stylesheet" href="Frontend/header.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/home.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/marketing.css">
@@ -23,15 +23,15 @@
 <body onresize="checaDispositivo()" onload="checaDispositivo()" onscroll="escondeHeader()">
   
     <a href="#topo" class="setaTopo">
-      <img src="Frontend/img/right-arrow.png" alt="seta">
+      <img src="Frontend/FrontendPages/img/right-arrow.png" alt="seta">
     </a>
 
     <header>
         <a href="" class="logo">
-            <img src="Frontend/img/Capturar-removebg-preview 1.png" alt="logoEmpresa">
+            <img src="Frontend/FrontendPages/img/Capturar-removebg-preview 1.png" alt="logoEmpresa">
         </a>
 
-        <img onclick="chamaMenu()" src="Frontend/img/menu-suspenso.png" class="menu" alt="menu">
+        <img onclick="chamaMenu()" src="Frontend/FrontendPages/img/menu-suspenso.png" class="menu" alt="menu">
 
         <ul class="retratil">
             <li class="menuItens">Mapa de localização</li>
@@ -55,19 +55,19 @@
     <section class="container row mark">
       
       <div class="col-md">
-        <img src="Frontend/img/ciber-seguranca 1.png" alt="segurança">
+        <img src="Frontend/FrontendPages/img/ciber-seguranca 1.png" alt="segurança">
         <h2>Segurança</h2>
         <p>Mantemos seu carro segura enquanto você precisar</p>
       </div>
       
       <div class="col-md">
-        <img src="Frontend/img/localizacao 1.png" class="maior" alt="localizacao">
+        <img src="Frontend/FrontendPages/img/localizacao 1.png" class="maior" alt="localizacao">
         <h2>Localização</h2>
         <p>localização próxima ao seus objetivos</p>
       </div>
       
       <div class="col-md">
-        <img src="Frontend/img/transferencia-movel 1.png" alt="preço">
+        <img src="Frontend/FrontendPages/img/transferencia-movel 1.png" alt="preço">
         <h2>Preço</h2>
         <p>Preços acessiveis e justos para toda a população</p>
       </div>
@@ -77,9 +77,9 @@
     <section class="container-fluid row map">
       <div class="col-md centraGrid">
         <div class="gridMap">
-          <img src="Frontend/img/localizacao 2.png" id="item1" alt="seta">
-          <img src="Frontend/img/Rectangle 59.png" id="item2" alt="cidade">
-          <img src="Frontend/img/Rectangle 61.png" id="item3" alt="cidade2">
+          <img src="Frontend/FrontendPages/img/localizacao 2.png" id="item1" alt="seta">
+          <img src="Frontend/FrontendPages/img/Rectangle 59.png" id="item2" alt="cidade">
+          <img src="Frontend/FrontendPages/img/Rectangle 61.png" id="item3" alt="cidade2">
         </div>
       </div>
 
@@ -93,7 +93,7 @@
     <section class="container-fluid row blog">
       <div class="col-md carImg">
         <div></div>
-        <img src="Frontend/img/image-removebg-preview 1.png" alt="carro">
+        <img src="Frontend/FrontendPages/img/image-removebg-preview 1.png" alt="carro">
       </div>
 
       <div class="col-md descBlog">

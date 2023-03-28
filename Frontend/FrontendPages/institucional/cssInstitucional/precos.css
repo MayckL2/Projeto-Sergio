@@ -1,6 +1,6 @@
 .precos{
-
-    background-image: url(../img/fundoPrecos2.png);
+    background-attachment: fixed;
+    background-image: url(../../img/fundoPrecos.png);
     background-size: cover;
     background-position: center center;
     display: flex;

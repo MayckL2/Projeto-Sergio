@@ -1,3 +1,19 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background-color: gray;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #f49555;
+border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #aaa;
+}
 
 body{
     background-color: #424242 !important;
@@ -36,7 +52,6 @@ header{
     top: 0px;
     width: 100vw;
     z-index: 1;
-    /* background-color: transparent; */
     border-radius: 0px 20px;
     transition: all 0.5s;
     z-index: 3;
