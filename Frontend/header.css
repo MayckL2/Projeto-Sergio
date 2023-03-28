@@ -1,0 +1,105 @@
+
+body{
+    background-color: #424242 !important;
+}
+
+.setaTopo{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border: solid orange;
+  border-radius: 50%;
+  transition: all 0.5s;
+  z-index: 3;
+  opacity: 0;
+}
+.setaTopo img{
+  width: 50px;
+  rotate: -90deg;
+  padding: 5px;
+  transition: all 0.5s;
+}
+.setaTopo img:hover{
+  filter: grayscale(50);
+}
+.setaTopo:hover{
+  filter: grayscale(50);
+}
+
+header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    z-index: 1;
+    /* background-color: transparent; */
+    border-radius: 0px 20px;
+    transition: all 0.5s;
+    z-index: 3;
+}
+
+header .logo img{
+    width: 250px;
+    object-fit: contain;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+
+}
+@media (max-width: 800px) {
+    header ul{
+        position: absolute;
+        top: 90px;
+        right: -200px;
+        flex-direction: column;
+        background-color: #424242;
+        padding: 30px;
+        border-radius: 20px 0px 0px 20px;
+        transition: all 0.5s;
+        z-index: 99;
+        
+    }
+}
+
+header .menuItens{
+    color: white;
+    cursor: pointer;
+    border-bottom: solid transparent;
+    transition: all 0.5s;
+    width: fit-content;
+
+}
+
+header .menuItens:hover{
+    border-bottom: solid;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: orange;
+    border: solid;
+    padding: 5px 30px;
+    transition: all 0.5s;
+}
+header ul li a:hover{
+    background-color: orange;
+    color: white;
+    border: solid transparent;
+}
+
+header .menu{
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
