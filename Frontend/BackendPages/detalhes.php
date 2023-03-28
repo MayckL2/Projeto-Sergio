@@ -12,6 +12,7 @@
     <?php
     session_start();
     include_once("../../rotas.php");
+    date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
     
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];

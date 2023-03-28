@@ -25,19 +25,17 @@
             <input type="text" id="nome" name="nome" autofocus required><br><br>
 
             <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone" required><br><br>
+            <input type="text" id="telefone" name="telefone" pattern="[0-9]{11}" required><br><br>
 
             <label for="placa">Placa:</label>
-            <input type="text" id="placa" name="placa" required><br><br>
+            <input type="text" id="placa" name="placa" pattern="[A-Z]{3}\d[A-Z0-9]\d{2}" oninput="this.value = this.value.toUpperCase()" required><br><br>
 
             <input type="submit" value="Enviar">
-        </form>';
+        </form>';   
     } else {
         header("Location: " . $loginRoute);
     }
     ?>
-
-
 
 
 </body>

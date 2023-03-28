@@ -24,7 +24,7 @@
         }
         // começo da tela
         echo '
-        <form action="<?php echo $procCadFunRoute; ?>" method="POST">
+        <form action="' .$procCadFunRoute. '" method="POST">
             <label for="cpf">CPF:</label>
             <input type="text" name="cpf" autofocus required><br><br>
 
@@ -38,12 +38,12 @@
             <input type="text" name="login" required><br><br>
 
             <label for="senha">Senha:</label>
-            <input type="password" name="senha">
+            <input type="password" name="senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$">
             <!-- Botão de informação -->
             <button id="btn">I</button><br><br>
 
             <label for="senha">Digite novamente a senha:</label>
-            <input type="password" name="confsenha"><br><br>
+            <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
 
             <input type="submit" id="enviar" value="Enviar" disabled>
 
@@ -61,10 +61,11 @@
         </div>
         
         <script src='. $confSenhaRoute.'></script>
-        <script src='.$modalInfRoute.'></script>
+        <script src='. $modalInfRoute.'></script>
         ';
         // fim da tela
     } else {
+
         header("Location: " . $listaRoute);
 
     }
