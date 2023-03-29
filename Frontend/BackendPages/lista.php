@@ -88,7 +88,6 @@
             </fieldset>
 
             <a href='$procCalculoRoute?id=$row[0]'>Detalhes</a><br>
-            <hr>
           </div>
           ";
     }

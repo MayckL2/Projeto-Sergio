@@ -31,17 +31,34 @@ a {
 }
 
 .back {
-    height: auto;
+    height: 70vh;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
     display: grid;
     grid-template-columns: 20vw 80vw;
-    place-items: center;
+    /* place-items: center; */
     background-image: url(../img/mustang.png);
-    background-size: contain;
+    background-size: 100vw 70vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+@media (max-width: 800px) {
+    .back{
+        grid-template-columns: auto;
+        height: 82vh;
+    }
+    form{
+        margin: 0px 30px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+@media (max-width: 600px) {
+    .back{
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
 header {
@@ -52,7 +69,7 @@ header {
     padding: 20px;
 }
 
-header a {
+header a, button {
     padding: 10px;
     transition: all 0.5s;
     text-decoration: underline transparent;
@@ -60,22 +77,33 @@ header a {
     border-left: solid;
     border-radius: 2px;
 }
+@media (max-width: 600px) {
+    header a, button{
+        width: fit-content;
+    }
+}
 
 header a:hover {
     border: solid;
 }
 
+header img{
+    width: 200px !important;
+}
+
+
 form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 30px;
+    /* justify-content: center; */
     gap: 10px;
     margin-bottom: 50px;
 }
 
 form input[type="text"] {
-    padding: 5px 100px;
+    padding: 5px 10vw;
     font-size: 20px;
     text-align: center;
     border-radius: 10px;
@@ -121,6 +149,16 @@ form input[type="submit"]:hover {
     background-repeat: no-repeat;
     background-position: 0px 100px;
 }
+@media (max-width: 900px) {
+    .cards{
+        grid-template-columns: auto auto;
+    }
+}
+@media (max-width: 650px){
+    .cards{
+        grid-template-columns: auto;
+    }
+}
 
 .cards div {
     background-color: white;
@@ -131,8 +169,13 @@ form input[type="submit"]:hover {
     display: flex;
     flex-direction: column;
 }
+@media (max-width: 600px){
+    .cards div{
+        width: 70vw;
+    }
+}
 
-.cards div a {
+.cards div a{
     margin: 5px auto;
     transition: all 0.5s;
 }
