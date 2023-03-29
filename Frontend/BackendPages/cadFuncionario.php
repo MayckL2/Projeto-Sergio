@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../cssModalSenha/modal.css">
+    <link rel="stylesheet" href="../../Frontend/FrontendPages/cssModalSenha/modal.css">
     <title>Document</title>
 </head>
 
@@ -40,25 +40,20 @@
             <label for="senha">Senha:</label>
             <input type="password" name="senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$">
             <!-- Botão de informação -->
-            <button id="btn">I</button><br><br>
+            <div id="mod">
+
+                <p>?</p>
+                <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 símbolo</p>
+
+            </div>
 
             <label for="senha">Digite novamente a senha:</label>
             <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
 
             <input type="submit" id="enviar" value="Enviar" disabled>
+            <a href=' . $listaRoute . ' ?>VOLTAR</a>
 
         </form>
-        <!-- A Modal -->
-        <div id="myModal" class="modal">
-
-            <!-- Modal conteúdo -->
-            <div class="modal-content">
-                <!-- Botão de fechar com um X (&times;)-->
-                <span class="close">&times;</span>
-                <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 símbolo</p>
-            </div>
-
-        </div>
         
         <script src='. $confSenhaRoute.'></script>
         <script src='. $modalInfRoute.'></script>

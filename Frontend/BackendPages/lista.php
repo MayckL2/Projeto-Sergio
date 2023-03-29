@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cssBack/modalfechamento.css">
   <title>Document</title>
 
   <link rel="stylesheet" href="cssBack/lista.css">
@@ -26,7 +27,7 @@
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO</a>";
     }
     echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
-    echo "<a href='$procFechamentoRoute'>FECHAMENTO</a>";
+    echo "<button id='meuBota'>FECHAMENTO</button>";
     echo "<a href='$historicoRoute'>HISTÓRICO</a>";
     echo "<a href='$procLogoffRoute'>SAIR</a><br>";
 
@@ -88,7 +89,6 @@
             </fieldset>
 
             <a href='$procCalculoRoute?id=$row[0]'>Detalhes</a><br>
-            <hr>
           </div>
           ";
     }
@@ -132,6 +132,23 @@
     echo "Por favor, faça o login primeiro.";
     header("Location: " . $loginRoute);
   } ?>
+
+
+<div id="myModa" class="moda">
+
+  <div class="modal-content">
+
+    <span class="clos">&times;</span>
+
+    <p>Tem certeza que quer realizar o fechamento de todos os carros?</p>
+
+    <a href=<?php echo $procFechamentoRoute; ?>>SIM</a>
+    <a href=<?php echo $listaRoute ?> class="naoBtn">NÃO</a>
+
+  </div>
+</div>
+
+<script src="enginefechamento.js"></script>
 
 </body>
 
