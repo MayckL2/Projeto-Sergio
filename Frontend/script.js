@@ -3,6 +3,10 @@ let retratil = document.querySelector(".retratil")
 let header = document.querySelector("header")
 let scroll= 0
 let seta = document.querySelector(".setaTopo")
+let modal = document.querySelector(".contato")
+document.querySelector("footer div button").addEventListener("click", abreModal)
+document.querySelector(".contato .fecha").addEventListener("click", fechaModal)
+
 
 // verifica o temanho do dispositivo
 function checaDispositivo(){
@@ -37,4 +41,14 @@ function escondeHeader(){
     header.style.backgroundColor= "transparent"
     seta.style.opacity= '0'
   }
+}
+
+// abre modal de contate-nos
+function abreModal(){
+  modal.style.display ="flex"
+}
+
+// fehca modal de contate-nos
+function fechaModal(){
+  modal.style.display= "none"
 }

@@ -17,6 +17,7 @@ background-color: #aaa;
 
 body{
     background-color: #424242 !important;
+    overflow-x: hidden;
 }
 
 .setaTopo{
@@ -89,7 +90,16 @@ header .menuItens{
     border-bottom: solid transparent;
     transition: all 0.5s;
     width: fit-content;
-
+}
+.menuItens a{
+    color: white;
+    border: none;
+    display: flex;
+    padding: 0px;
+}
+.menuItens a:hover{
+    background-color: transparent !important;
+    border: none;
 }
 
 header .menuItens:hover{
@@ -118,3 +128,143 @@ header .menu{
     transition: all 0.5s;
 }
 
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    background-color: #838383;
+}
+
+footer img{
+    width: 200px;
+}
+
+footer .barra{
+    position: absolute;
+    background-color: black;
+    padding: 15px 300px;
+    top: -15px;
+    left: 25%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 600px) {
+    footer .barra{
+        left: 0px;
+        padding: 10px 50vw;
+    }
+}
+
+footer button{
+    background-color: transparent;
+    border: solid black;
+    padding: 5px 20px;
+    transition: all 0.5s;
+    font-weight: bold;
+}
+footer button:hover{
+    background-color: white;
+    border: solid transparent;
+}
+
+footer div{
+    display: flex;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px){
+    footer div{
+        margin: 0 auto;
+    }
+}
+
+footer div img{
+    width: 40px;
+    margin: 0px 10px;
+}
+
+.contato{
+    position: fixed;
+    top: 20px;
+    left: 10%;
+    background-color: #444444;
+    padding: 30px;
+    z-index: 4;
+    width: 80vw;
+    color: white;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+}
+
+.contato p{
+    color: red;
+}
+
+#email{
+    grid-area: email;
+}
+#ddd{
+    grid-area: ddd;
+}
+#tell{
+    grid-area: tell;
+}
+#mensa{
+    grid-area: mensa;
+}
+
+.contato{
+    border-radius: 0px 20px 0px 20px;
+
+}
+
+.contato form{
+    width: 100%;
+}
+
+.contato input {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 0px 10px 0px 10px;
+    border: solid white;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+.contato input:focus{
+    outline: none;
+}
+
+.contato .fecha{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: red;
+    border: none;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 2px 15px;
+}
+.contato .fecha:hover{
+    border: none;
+}
+
+.contato button{
+    margin: 10px auto;
+    color: red;
+    background-color: transparent;
+    border: solid;
+    padding: 5px 20px;
+    transition: all 0.5s;
+}
+.contato button:hover{
+    color: white;
+    background-color: red;
+    border: solid transparent;
+}

@@ -69,13 +69,18 @@ header {
     padding: 20px;
 }
 
-header a {
+header a, button {
     padding: 10px;
     transition: all 0.5s;
     text-decoration: underline transparent;
     border: solid transparent;
     border-left: solid;
     border-radius: 2px;
+}
+@media (max-width: 600px) {
+    header a, button{
+        width: fit-content;
+    }
 }
 
 button {
@@ -101,11 +106,14 @@ header a:hover {
     border: solid;
 }
 
+<<<<<<< HEAD
 button:hover{
     border: solid;
     cursor: pointer;
 }
 
+=======
+>>>>>>> 74c4f992b2d89e36718ac0bfd02847f2102c3248
 header img{
     width: 200px !important;
 }
