@@ -32,3 +32,10 @@
     width: 600px;
 }
 
+
+@media(max-width: 800px) {
+    .estrutura p{
+        width: auto;
+    }
+    
+}
