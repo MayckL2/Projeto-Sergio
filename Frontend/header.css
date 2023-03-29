@@ -97,6 +97,10 @@ header .menuItens{
     display: flex;
     padding: 0px;
 }
+.menuItens a:hover{
+    background-color: transparent !important;
+    border: none;
+}
 
 header .menuItens:hover{
     border-bottom: solid;
