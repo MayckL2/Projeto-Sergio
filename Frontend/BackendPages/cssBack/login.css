@@ -1,0 +1,125 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/fundoLogin.png);
+    background-repeat: no-repeat;
+    background-position: center ;    
+}
+
+
+.box-conteudo{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 100px 100px rgba(122, 118, 118, 0.6);
+    border-radius: 0 50px 0 50px;
+
+
+}
+
+
+.imagem-logo{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 0 50px;
+    padding: 35px;
+}
+
+img{
+    width: 350px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color:#ffffff;
+    border-radius: 0 50px 0 0;
+    padding: 70px;
+    gap: 40px;
+}
+
+form h1{
+    text-align: center;
+}
+
+label{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    width: 300px;
+    height: 40px;
+    border-radius: 0 20px 0 20px;
+    padding-left: 25px;
+    margin-top:  10px;
+    outline: none;
+    background: none;
+    border: 2px solid black;
+    font-weight: bold;
+    
+    
+}
+
+p{
+text-align: center;
+    margin: 0;
+    padding: 0;
+    color: #E14646;
+}
+
+
+input[type="submit"]{
+    padding: 10px;
+    width: 150px;
+    border-radius: 0 20px 0 20px;
+    outline: none;
+    border: none;
+    background-color: #39CCE4;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+input[type="submit"]:hover{
+    background-color: #00B6D4;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0 30px 0 30px;
+
+}
+
+.voltar{
+    color: #00a0b9;
+}
+
+
+@media(max-width: 900px) {
+    .imagem-logo{
+        display: none;
+    }
+
+    form{
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    input[type="text"], 
+    input[type="password"]{
+        width: auto;
+        height: auto;
+    }
+    
+
+}
