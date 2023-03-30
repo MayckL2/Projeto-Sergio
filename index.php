@@ -35,10 +35,9 @@
         <img onclick="chamaMenu()" src="Frontend/FrontendPages/img/menu-suspenso.png" class="menu" alt="menu">
 
         <ul class="retratil">
-            <li class="menuItens"><a href="">Mapa de localização</a></li>
+            <li class="menuItens"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
             <li class="menuItens"><a href="">Blog</a></li>
-            <li class="menuItens"><a href="">Institucional</a></li>
-            <li class="menuItens"><a href="">Contato</a></li>
+            <li class="menuItens"><a href="Frontend\FrontendPages\institucional\institucional.html">Institucional</a></li>
             <li><a href="<?php echo $loginRoute; ?>">Login</a></li>
         </ul>
     </header>
@@ -139,7 +138,7 @@
         </fieldset>
         <fieldset id="mensa">
           <legend>Mensagem</legend>
-          <input type="text">
+          <textarea name="" id="" cols="10" rows="10"></textarea>
         </fieldset>
 
         <button>Enviar</button>
@@ -153,8 +152,8 @@
 
       <div>
         <button>Contate-nos</button>
-        <a href=""><img src="Frontend\FrontendPages\img\facebook (2) 1.png" alt="facebook"></a>
-        <a href=""><img src="Frontend\FrontendPages\img\github (1) 1.png" alt="github"></a>
+        <a href=""><img src="Frontend\FrontendPages\img\facebook.png" alt="facebook"></a>
+        <a href=""><img src="Frontend\FrontendPages\img\github.png" alt="github"></a>
         <a href=""><img src="Frontend\FrontendPages\img\insta.png" alt="instagram"></a>
       </div>
 
