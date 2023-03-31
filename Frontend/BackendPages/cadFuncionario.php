@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Frontend/FrontendPages/cssModalSenha/modal.css">
+    <link rel="stylesheet" href="./cssBack/modalsenha.css">
     <title>Document</title>
 </head>
 
@@ -25,30 +26,54 @@
         // começo da tela
         echo '
         <form action="' .$procCadFunRoute. '" method="POST">
-            <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" autofocus required><br><br>
 
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" required><br><br>
+            <fieldset>
+                <legend>CPF</legend>
+                <input type="text" name="cpf" autofocus required><br><br>
+            </fieldset>
 
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" required><br><br>
+            <fieldset>
+                <legend>NOME</legend>
+                <input type="text" name="nome" required><br><br>
+            </fieldset>
 
-            <label for="login">Login:</label>
-            <input type="text" name="login" required><br><br>
+            <fieldset>
+                <legend>SOBRENOME</legend>
+                <input type="text" name="sobrenome" required><br><br>
+            </fieldset>
 
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$">
+            <fieldset>
+                <legend>LOGIN</legend>
+                <input type="text" name="login" required><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>SENHA</legend>
+                <input type="password" name="senha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$">
+                <input type="button" value="?" class="info" id="info"></input>
+            </fieldset>
+
             <!-- Botão de informação -->
-            <div id="mod">
 
-                <p>?</p>
-                <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 numero e 1 símbolo</p>
 
+            <div id="myModa" class="mod">
+
+                <div class="modal-content">
+
+                    <span class="clo">&times;</span>
+
+                    <p class="pmodal">Requisitos: Mínimo 1 letra maiúscula, 1 letra minúscula, 1 número e um caracter especial.</p><br><br>
+
+                    </div>
+
+
+                </div>
+                
             </div>
-
-            <label for="senha">Digite novamente a senha:</label>
-            <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
+            <fieldset>
+                <legend>CONFIRME A SENHA</legend>
+                <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
+            </fieldset>
 
             <input type="submit" id="enviar" value="Enviar" disabled>
             <a href=' . $listaRoute . ' ?>VOLTAR</a>
@@ -56,7 +81,8 @@
         </form>
         
         <script src='. $confSenhaRoute.'></script>
-        <script src='. $modalInfRoute.'></script>
+        <script src='. $engineSenhaRoute.'></script>
+
         ';
         // fim da tela
     } else {
