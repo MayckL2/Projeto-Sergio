@@ -146,7 +146,6 @@
     </div>
 
     <footer>
-      <div class="barra"></div>
 
       <!-- <img src="Frontend\FrontendPages\img\Capturar-removebg-preview 1.png" alt="logo"> -->
 
