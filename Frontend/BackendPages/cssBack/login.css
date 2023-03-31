@@ -74,6 +74,7 @@ text-align: center;
     margin: 0;
     padding: 0;
     color: #E14646;
+    font-weight: bold;
 }
 
 
@@ -101,6 +102,8 @@ input[type="submit"]:hover{
 
 .voltar{
     color: #00a0b9;
+    text-decoration-line: none;
+    width: 10%;
 }
 
 

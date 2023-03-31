@@ -69,17 +69,38 @@ header {
     padding: 20px;
 }
 
-header a, button {
+header a {
     padding: 10px;
     transition: all 0.5s;
     text-decoration: underline transparent;
     border: solid transparent;
     border-left: solid;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 header a:hover {
     border: solid;
+}
+
+button{
+    padding: 10px;
+    transition: all 0.5s;
+    color: orange;
+    border: solid transparent;
+    border-left: solid;
+    border-radius: 2px;
+    cursor: pointer;
+    background: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+button:hover{
+    border: solid;
+    cursor: pointer;
 }
 
 form {
@@ -87,7 +108,7 @@ form {
     flex-direction: row;
     align-items: flex-start;
     margin: 30px;
-    /* justify-content: center; */
+    justify-content: center;
     gap: 10px;
     margin-bottom: 50px;
 }
@@ -96,33 +117,79 @@ form input[type="text"] {
     padding: 5px 10vw;
     font-size: 20px;
     text-align: center;
-    border-radius: 10px;
-    border: none;
+    border: 1px solid black;
     transition: all 0.5s;
 }
 
 form input[type="text"]:focus {
     outline: none;
-    border: none;
-    border-radius: 0px;
+    border: 3px solid black;
+    border-radius: 30px 0px 30px 0px;
 }
 
 form input[type="submit"] {
-    padding: 10px 20px;
+    padding: 7px 20px;
     font-family: sans-serif;
     font-size: 15px;
     font-weight: bold;
     color: white;
     background-color: red;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid black;
     cursor: pointer;
     transition: all 0.5s;
+    
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-evenly;
+    /* background-color: aqua; */
+}
+
+.simBtn{
+    border: 3px solid white;
+    color: white;
+    width: 20%;
+}
+
+.naoBtn{
+    border: 3px solid white;
+    color: white;
+    width: 20%;
+}
+
+.simBtn:hover{
+    background-color: white;
+    color: black;
+    border-radius: 30px 0px 30px 0px;
+}
+
+.naoBtn:hover{
+    background-color: white;
+    color: black;
+    border-radius: 30px 0px 30px 0px;
+}
+
+.modal-content{
+    background-color: black;
+    opacity: 0.6;
+    width: 35%;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.pmodal{
+    color: white;
+    opacity: 1;
+}
+
+.clos:hover{
+    color: white;
 }
 
 form input[type="submit"]:hover {
-    border-radius: 0px;
+    border-radius: 30px  0px 30px 0px;
     background-color: black;
+    border: 2px solid white;
 }
 
 .cards {

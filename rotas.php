@@ -13,6 +13,7 @@ $listaRoute = $rootBackPages . "lista.php";
 $cadFunRoute = $rootBackPages . "cadFuncionario.php";
 $registroRoute = $rootBackPages . "registro.php";
 $detalhesRoute = $rootBackPages . "detalhes.php";
+$detalhesHistoricoRoute = $rootBackPages . "detalhesHistorico.php";
 $historicoRoute = $rootBackPages . "historico.php";
 
 $homeRoute = $root . "index.php";

@@ -22,7 +22,7 @@ try {
         header("Location: " . $listaRoute);
     } else {
 
-        $_SESSION['msg'] = "<p>Login não efetuado.</p>";
+        $_SESSION['msg'] = "<p>USUÁRIO OU SENHA INCORRETO(S).</p>";
         header("Location: " . $loginRoute);
 
     }

@@ -3,10 +3,6 @@ session_start();
 include_once("../../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexao
 
-if (isset($_SESSION['msg'])) {
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +54,6 @@ if (isset($_SESSION['msg'])) {
                 <input type="password" name="senha" > 
 
             </div>
-
-            
 
 
             <input type="submit" value="Entrar">

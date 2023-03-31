@@ -35,8 +35,8 @@
 
     echo "
     <form action='$listaRoute' method='get'>
-      <input type='text' placeholder='pesquise por placas' name='pesq'>
-      <input type='submit' value='pesquisar'>
+      <input type='text' placeholder='Pesquise por placas' name='pesq'>
+      <input type='submit' value='Pesquisar'>
     </form>
     ";
 
@@ -140,10 +140,15 @@
 
     <span class="clos">&times;</span>
 
-    <p>Tem certeza que quer realizar o fechamento de todos os carros?</p>
+    <p class="pmodal">Tem certeza que quer realizar o fechamento de todos os carros?</p><br><br>
 
-    <a href=<?php echo $procFechamentoRoute; ?>>SIM</a>
-    <a href=<?php echo $listaRoute ?> class="naoBtn">NÃO</a>
+    <div class="botoes">
+      <a href=<?php echo $procFechamentoRoute; ?> class="simBtn">SIM</a>
+  
+      <a href=<?php echo $listaRoute ?> class="naoBtn">NÃO</a>
+
+    </div>
+
 
   </div>
 </div>
