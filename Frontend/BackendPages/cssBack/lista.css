@@ -69,7 +69,7 @@ header {
     padding: 20px;
 }
 
-header a {
+header a, button {
     padding: 10px;
     transition: all 0.5s;
     text-decoration: underline transparent;
@@ -78,38 +78,9 @@ header a {
     border-radius: 2px;
 }
 
-button {
-    padding: 10px;
-    transition: all 0.5s;
-    border: solid transparent;
-    border-left: solid;
-    border-radius: 2px;
-    background: none;
-    color: orange;
-    font-weight: bold;
-    text-align: left;
-    font-size: 16px;
-}
-
-@media (max-width: 600px) {
-    header a, button{
-        width: fit-content;
-    }
-}
-
 header a:hover {
     border: solid;
 }
-
-button:hover{
-    border: solid;
-    cursor: pointer;
-}
-
-header img{
-    width: 200px !important;
-}
-
 
 form {
     display: flex;

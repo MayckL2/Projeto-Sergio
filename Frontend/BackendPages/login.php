@@ -16,27 +16,59 @@ if (isset($_SESSION['msg'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="./cssBack/login.css">
 </head>
 
 
 
 <body>
+    <div class="container box-conteudo">
 
-    <form action="<?php echo $procLoginRoute; ?>" method="post">
+        <div class="imagem-logo">
+            <a href=""><img src="img/logo.png" alt="./"></a>
+        </div>
 
-        <label for="login">LOGIN: </label>
-        <input type="text" name="login" placeholder="Digite seu nome de login">
+        <form action="<?php echo $procLoginRoute; ?>" method="post">
 
-        <label for="senha">SENHA: </label>
-        <input type="password" name="senha" placeholder="Digite sua senha"> <br><br>
+            <h1>Sing In</h1>
+
+            <?php 
+
+                if (isset($_SESSION['msg'])) {
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+
+            ?>
+
+            <div class="login">
+            
+                <label for="login">Login </label>
+                <br>
+                <input type="text" name="login">
+                
+            </div>
+
+            <div class="senha">
+
+                <label for="senha">Senha </label>
+                <br>
+                <input type="password" name="senha" > 
+
+            </div>
+
+            
 
 
-        <input type="submit" value="ENTRAR">
-        <a href=<?php echo $homeRoute; ?>>VOLTAR</a>
-        
-        
-    </form>
+            <input type="submit" value="Entrar">
+            <a class="voltar" href=<?php echo $homeRoute; ?>>Voltar</a>
+            
+            
+        </form>
+
+    </div>
 
 </body>
 

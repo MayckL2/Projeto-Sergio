@@ -8,6 +8,12 @@
   background-attachment: fixed;
   margin-left: 0px !important;
 }
+@media (max-width: 900px) {
+  .inst{
+    height: auto;  
+    padding: 20px 0px;
+  }
+}
 
 .inst div{
   width: 80%;

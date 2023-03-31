@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="Frontend/cssHomePage/blog.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/localiza.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/instituicao.css">
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
     rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
     crossorigin="anonymous">
@@ -34,10 +35,9 @@
         <img onclick="chamaMenu()" src="Frontend/FrontendPages/img/menu-suspenso.png" class="menu" alt="menu">
 
         <ul class="retratil">
-            <li class="menuItens">Mapa de localização</li>
-            <li class="menuItens">Blog</li>
-            <li class="menuItens">Institucional</li>
-            <li class="menuItens">Contato</li>
+            <li class="menuItens"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
+            <li class="menuItens"><a href="">Blog</a></li>
+            <li class="menuItens"><a href="Frontend\FrontendPages\institucional\institucional.html">Institucional</a></li>
             <li><a href="<?php echo $loginRoute; ?>">Login</a></li>
         </ul>
     </header>
@@ -116,6 +116,48 @@
         <a href="">Saiba Mais</a>
       </div>
     </section>
+
+    <div class="contato">
+      <button class="fecha">X</button>
+      <h2>ENTRE EM CONTATO</h2>
+
+      <p>Se você ficou interessado, preencha o formulário abaixo e entre para a rede de estacionamentos que é líder no mercado.</p>
+
+      <form action="">
+        <fieldset id="email">
+          <legend>E-mail</legend>
+          <input type="email">
+        </fieldset>
+        <fieldset id="ddd">
+          <legend>DDD</legend>
+          <input type="text">
+        </fieldset>
+        <fieldset id="tell">
+          <legend>Telefone</legend>
+          <input type="text">
+        </fieldset>
+        <fieldset id="mensa">
+          <legend>Mensagem</legend>
+          <textarea name="" id="" cols="10" rows="10"></textarea>
+        </fieldset>
+
+        <button>Enviar</button>
+      </form>
+    </div>
+
+    <footer>
+      <div class="barra"></div>
+
+      <!-- <img src="Frontend\FrontendPages\img\Capturar-removebg-preview 1.png" alt="logo"> -->
+
+      <div>
+        <button>Contate-nos</button>
+        <a href=""><img src="Frontend\FrontendPages\img\facebook.png" alt="facebook"></a>
+        <a href=""><img src="Frontend\FrontendPages\img\github.png" alt="github"></a>
+        <a href=""><img src="Frontend\FrontendPages\img\insta.png" alt="instagram"></a>
+      </div>
+
+    </footer>
 
     <script src="Frontend/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
