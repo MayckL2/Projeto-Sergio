@@ -98,4 +98,3 @@ if ($certo1 && $certo2 && $ext == 0) {
     $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
     header("Location: " . $cadFunRoute);
 }
-echo '';
