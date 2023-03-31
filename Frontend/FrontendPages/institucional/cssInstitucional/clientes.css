@@ -5,10 +5,6 @@ body, hr{
     overflow-x: hidden;   
 }
 
-header{
-    position: absolute;
-}
-
 .noticias{
     background-attachment: fixed;
     background-image: url(../../img/fundoClientes.png);
