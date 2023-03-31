@@ -53,6 +53,7 @@
 }
 
 .cardPreco button{
+    cursor: default;
     margin: auto ;
     height: 40px;
     width: 200px;
