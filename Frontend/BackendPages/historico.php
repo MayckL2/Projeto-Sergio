@@ -138,10 +138,16 @@
     // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
 
+    
     echo "<div class='cards'>";
-
+    
     // Para cada index no array rows, cria um "card"
     foreach ($rows as $row) {
+      $hora_entrada = new DateTime($row[6]);
+      $hora_saida = new DateTime($row[7]);
+      $diferenca = $hora_entrada->diff($hora_saida);
+      $tempPerm = $diferenca->format('%H:%I');
+
       echo "
           <div>
 
@@ -149,10 +155,10 @@
             <legend>Nome</legend>
             <p>$row[2]</p>
             </fieldset>
-          
+
             <fieldset>
-            <legend>Horário de saida</legend>
-            <p>$row[7]</p>
+            <legend>Tempo de Permanência</legend>
+            <p>$tempPerm</p>
             </fieldset>
           
             <fieldset>
@@ -161,7 +167,7 @@
             </fieldset>
 
             <fieldset>
-            <legend>Placa</legend>
+            <legend>Preço</legend>
             <p>$row[8]</p>
             </fieldset>
 
