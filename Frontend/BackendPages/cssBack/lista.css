@@ -23,6 +23,7 @@ body {
     background-color: #565555;
     font-family: sans-serif;
     font-weight: bold;
+    overflow-x: hidden;
 }
 
 a {
@@ -38,12 +39,14 @@ a {
     display: grid;
     grid-template-columns: 20vw 80vw;
     /* place-items: center; */
-    background-image: url(../img/Audi.png);
-    background-size: 100vw 70vh;
+    background-image: url(../img/mustang.png);
+    /* background-size: 100vw 70vh; */
+    background-size: cover;
+    background-position: center -150px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
     .back{
         grid-template-columns: auto;
         height: 82vh;
@@ -53,13 +56,13 @@ a {
         flex-direction: column !important;
         align-items: center !important;
     }
-} */
-@media (max-width: 600px) {
+}
+/* @media (max-width: 1400px) {
     .back{
         background-size: cover;
         background-position: center center;
     }
-}
+} */
 
 header {
     display: flex;
@@ -81,6 +84,10 @@ header a {
 
 header a:hover {
     border: solid;
+}
+
+header img{
+  width: 200px;
 }
 
 button{
@@ -114,11 +121,17 @@ form {
 }
 
 form input[type="text"] {
-    padding: 5px 10vw;
+    padding: 5px;
+    width: 50%;
     font-size: 20px;
     text-align: center;
     border: 1px solid black;
     transition: all 0.5s;
+}
+@media (max-width: 500px) {
+  form input[type="text"] {
+    width: 100%;
+  }
 }
 
 form input[type="text"]:focus {
@@ -277,4 +290,8 @@ form input[type="submit"]:hover {
     margin: 0px;
     display: flex;
     align-items: center;
+}
+
+.historico p{
+  text-align: center;
 }
