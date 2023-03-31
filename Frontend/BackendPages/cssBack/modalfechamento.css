@@ -13,12 +13,13 @@
   
   /* Modal content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: black;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     text-align: center;
+    border-radius: 20px 0px 20px 0px;
   }
   
   /* Close button */
@@ -58,3 +59,4 @@
   .naoBtn:hover{
     border-bottom: solid;
   }
+  
