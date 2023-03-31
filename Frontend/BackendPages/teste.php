@@ -19,7 +19,7 @@
     }
 
     if ($existe == 0){
-        echo 'nada aqui otario';
+        echo 'nada aqui otario, meu deus';
     } else {
         echo 'Algo errado aqui, soldado';
     }
