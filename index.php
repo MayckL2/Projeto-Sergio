@@ -36,7 +36,7 @@
 
         <ul class="retratil">
             <li class="menuItens"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
-            <li class="menuItens"><a href="">Blog</a></li>
+            <li class="menuItens"><a href="Frontend\FrontendPages\blog\blog.html">Blog</a></li>
             <li class="menuItens"><a href="Frontend\FrontendPages\institucional\institucional.html">Institucional</a></li>
             <li><a href="<?php echo $loginRoute; ?>">Login</a></li>
         </ul>

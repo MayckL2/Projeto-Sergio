@@ -38,12 +38,12 @@ a {
     display: grid;
     grid-template-columns: 20vw 80vw;
     /* place-items: center; */
-    background-image: url(../img/mustang.png);
+    background-image: url(../img/Audi.png);
     background-size: 100vw 70vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .back{
         grid-template-columns: auto;
         height: 82vh;
@@ -53,7 +53,7 @@ a {
         flex-direction: column !important;
         align-items: center !important;
     }
-}
+} */
 @media (max-width: 600px) {
     .back{
         background-size: cover;
@@ -195,11 +195,10 @@ form input[type="submit"]:hover {
 .cards {
     padding: 20px;
     border-top: solid rgba(0, 0, 0, 0.208);
-    border-bottom: solid rgba(0, 0, 0, 0.208);
     display: grid;
     grid-template-columns: auto auto auto;
     place-items: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     background-image: url(../img/Group\ 13.png);
     background-size: 90vw;
@@ -224,6 +223,7 @@ form input[type="submit"]:hover {
     padding: 20px 10px;
     box-shadow: 1px 5px 0px gray;
     display: flex;
+    gap: 10px;
     flex-direction: column;
 }
 @media (max-width: 600px){
