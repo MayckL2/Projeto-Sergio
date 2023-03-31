@@ -86,7 +86,7 @@
       <div class="col-md descMap">
         <h2>MAPA DE LOCALIZAÇÃO NA CIDADE DE SÃO PAULO</h2>
         <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os</p>
-        <a href="">MAPA</a>
+        <a href="Frontend\FrontendPages\mapa\mapa.html">MAPA</a>
       </div>
     </section>
 
@@ -100,7 +100,7 @@
         <h2>CONHEÇA NOSSO BLOG</h2>
         <p>Este é o nosso espaço com dicas, notícias, novidades e informações úteis sobre
           os principais eventos que contam com nossos estacionamentos, mobilidade urbana, e mais!</p>
-        <a href="">Saiba mais</a>
+        <a href="Frontend\FrontendPages\blog\blog.html">Saiba mais</a>
       </div>
 
       <!-- <div class="col-md barra">
@@ -113,7 +113,7 @@
         <h2>SOBRE A DOC HUDSON</h2>
         <p>Buscamos através da inovação tecnologica a maior segurança e comobidade para o seu carro
           em uma localização coringa para o dia a dia em São Paulo</p>
-        <a href="">Saiba Mais</a>
+        <a href="Frontend\FrontendPages\institucional\institucional.html">Saiba Mais</a>
       </div>
     </section>
 
@@ -146,7 +146,6 @@
     </div>
 
     <footer>
-      <div class="barra"></div>
 
       <!-- <img src="Frontend\FrontendPages\img\Capturar-removebg-preview 1.png" alt="logo"> -->
 

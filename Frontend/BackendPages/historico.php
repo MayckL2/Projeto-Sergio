@@ -143,6 +143,7 @@
     
     // Para cada index no array rows, cria um "card"
     foreach ($rows as $row) {
+      // Verifica a hora de entrada e saída e calcula o tempo de permanência do carro
       $hora_entrada = new DateTime($row[6]);
       $hora_saida = new DateTime($row[7]);
       $diferenca = $hora_entrada->diff($hora_saida);
