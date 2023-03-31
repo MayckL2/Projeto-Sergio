@@ -81,7 +81,7 @@ foreach ($nlogin as $nick){
 if ($certo1 && $certo2 && $ext == 0) {
     // Será feito a inserção do novo usuário no banco
     $result_empresa = "INSERT INTO usuarios
-    VALUES (default, '$cpf', '$nome', '$sobrenome','$login', '$senha', NOW(), 'Fun')";
+    VALUES (default, '$nome', '$sobrenome', '$cpf','$login', '$senha', NOW(), 'Fun')";
     $resultado_empresa = mysqli_query($conn, $result_empresa);
 
     // Se a inserção ocorre normalmente, o usuário é enviado para a página de login
