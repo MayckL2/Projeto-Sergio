@@ -8,6 +8,8 @@
   <title>Document</title>
 </head>
 
+<link rel="stylesheet" href="cssBack/lista.css">
+
 <body>
 
   <?php
@@ -18,11 +20,17 @@
   // Verifica se o usuário está logado
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     // Caso o tipo do usuário fo Adm, mostrará o botão que leva a página de cadastro
+    echo "<div class='back'>";
+  
+    echo "<header>";
+
     if ($_SESSION['tipo'] == 'Adm') {
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
     }
-    echo "<a href='$registroRoute'>NOVA ENTRADA</a><br>";
-    echo "<a href='$listaRoute'>ENTRADAS</a><br><br>";
+    echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
+    echo "<a href='$listaRoute'>ENTRADAS</a><br>";
+
+    echo "</header>";
 
     echo "
     <form action='$historicoRoute' method='get'>
@@ -30,6 +38,8 @@
       <input type='submit' value='pesquisar'>
     </form>
     ";
+
+    echo "<div class='historico'>";
 
     echo "
     <form action='$historicoRoute' method='get'>
@@ -105,6 +115,9 @@
       echo "<p style = 'color: green;'>Total de carros que estacionaram aqui : $qtd_carros";
     } 
 
+    echo "</div>";
+    echo "</div>";
+
     // Receber o número da página
     $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
     $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
@@ -125,21 +138,39 @@
     // Retorna todos os registros coletados na query, e adicionar no array rows
     $rows = $resultado->fetch_all();
 
+    echo "<div class='cards'>";
+
     // Para cada index no array rows, cria um "card"
     foreach ($rows as $row) {
       echo "
           <div>
-            <p>Nome: $row[2]</p>
-            <p>Horário de saída: $row[7]</p>
-            <p>Placa: $row[4]</p>
-            <p>Valor Pago: $row[8]</p>
+
+            <fieldset>
+            <legend>Nome</legend>
+            <p>$row[2]</p>
+            </fieldset>
+          
+            <fieldset>
+            <legend>Horário de saida</legend>
+            <p>$row[7]</p>
+            </fieldset>
+          
+            <fieldset>
+            <legend>Placa</legend>
+            <p>$row[4]</p>
+            </fieldset>
+
+            <fieldset>
+            <legend>Placa</legend>
+            <p>$row[8]</p>
+            </fieldset>
+
             <!-- row[0] puxa o id -->
             <a href='$detalhesHistoricoRoute?id=$row[0]'>Detalhes</a><br>
-            <hr>
           </div>
           ";
     }
-    echo "<br>";
+    echo "</div>";
 
     // Paginação - Somar a quantidade de usuários
     $resultado_pg = mysqli_query($conn, "SELECT COUNT(PK_Registro)
@@ -149,6 +180,8 @@
 
     // Quantidade de pagina
     $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+
+    echo "<div class='pags'>";
 
     // Limitar os link antes depois
     $max_links = 2;
@@ -170,6 +203,7 @@
 
     echo " <a href='$historicoRoute?pagina=$quantidade_pg'>Ultima</a>";
 
+    echo "</div>";
   } else {
     echo "Por favor, faça o login primeiro.";
     header("Location: " . $loginRoute);

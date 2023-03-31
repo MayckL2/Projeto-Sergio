@@ -43,7 +43,7 @@
             <div id="mod">
 
                 <p>?</p>
-                <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula e 1 símbolo</p>
+                <p>Digite uma senha com: no mínimo 8 caracteres, 1 letra maiúscula, 1 letra minúscula, 1 numero e 1 símbolo</p>
 
             </div>
 
