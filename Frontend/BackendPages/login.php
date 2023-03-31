@@ -2,6 +2,11 @@
 session_start();
 include_once("../../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexao
+
+if (isset($_SESSION['msg'])) {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +18,8 @@ include_once($connRoute); // Inclui o arquivo de conexao
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+
 
 <body>
 
@@ -26,8 +33,9 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
 
         <input type="submit" value="ENTRAR">
-        <input type="reset" value="LIMPAR CAMPOS">
-
+        <a href=<?php echo $homeRoute; ?>>VOLTAR</a>
+        
+        
     </form>
 
 </body>

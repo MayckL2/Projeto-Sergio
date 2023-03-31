@@ -31,6 +31,7 @@
             <input type="text" id="placa" name="placa" pattern="[A-Z]{3}\d[A-Z0-9]\d{2}" oninput="this.value = this.value.toUpperCase()" required><br><br>
 
             <input type="submit" value="Enviar">
+            <a href=' . $listaRoute . ' ?>VOLTAR</a>
         </form>';   
     } else {
         header("Location: " . $loginRoute);

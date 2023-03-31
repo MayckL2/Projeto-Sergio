@@ -21,7 +21,10 @@ try {
         $_SESSION['tipo'] = $row[3];
         header("Location: " . $listaRoute);
     } else {
-        echo "Login não efetuado.";
+
+        $_SESSION['msg'] = "<p>Login não efetuado.</p>";
+        header("Location: " . $loginRoute);
+
     }
 
 
