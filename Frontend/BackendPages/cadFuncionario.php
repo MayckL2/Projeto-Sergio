@@ -62,7 +62,7 @@
 
                     <span class="clo">&times;</span>
 
-                    <p class="pmodal">Requisitos: Mínimo 1 letra maiúscula, 1 letra minúscula, 1 número e um caracter especial.</p><br><br>
+                    <p class="pmodal">Requisitos: Tamanho de no 8 caracteres com no mínimo 1 letra maiúscula, 1 letra minúscula, 1 número e um caracter especial.</p><br><br>
 
                     </div>
 
