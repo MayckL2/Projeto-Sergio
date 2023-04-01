@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
   `Data` DATE NOT NULL,
   `Horario_ent` TIME NOT NULL,
   `Horario_saida` TIME NULL,
-  `Recarregou_Carro` ENUM ('0', '1'), 
+  `Recarregou_Carro` ENUM ('0', '1') NOT NULL, 
   `Valor_vaga`FLOAT NULL,
   `Valor_eletrico` FLOAT NULL,
   `Valor_pago` FLOAT NULL,
