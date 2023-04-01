@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="cssBack/modalfechamento.css">
-  <title>Document</title>
+  <title>Carros cadastrados</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
+
 
   <link rel="stylesheet" href="cssBack/lista.css">
 </head>

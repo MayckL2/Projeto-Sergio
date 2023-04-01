@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doc Hudson</title>
-    <link rel="icon" href="Frontend/FrontendPages/img/Capturar-removebg-preview 1.png">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
     <link rel="stylesheet" href="Frontend/header.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/home.css">
     <link rel="stylesheet" href="Frontend/cssHomePage/marketing.css">
@@ -35,7 +35,7 @@
         <img onclick="chamaMenu()" src="Frontend/FrontendPages/img/menu-suspenso.png" class="menu" alt="menu">
 
         <ul class="retratil">
-            <li class="menuItens"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
+            <li class="menuItens" style="font-weight: 0;"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
             <li class="menuItens"><a href="Frontend\FrontendPages\blog\blog.html">Blog</a></li>
             <li class="menuItens"><a href="Frontend\FrontendPages\institucional\institucional.html">Institucional</a></li>
             <li><a href="<?php echo $loginRoute; ?>">Login</a></li>
@@ -47,10 +47,12 @@
             <div>
                 <h1>CONHEÇA NOSSA ESTRUTURA</h1>
                 <p>São Paulo - Capital</p>
-                <a href="">Veja</a>
+                <a href="Frontend/FrontendPages/institucional/institucional.html">Veja</a>
             </div>
         </div>
     </section>
+
+    <div class="divisoria"></div>
 
     <section class="container row mark">
       
@@ -74,6 +76,9 @@
 
     </section>
 
+    <div class="divisoria"></div>
+
+
     <section class="container-fluid row map">
       <div class="col-md centraGrid">
         <div class="gridMap">
@@ -86,9 +91,11 @@
       <div class="col-md descMap">
         <h2>MAPA DE LOCALIZAÇÃO NA CIDADE DE SÃO PAULO</h2>
         <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os</p>
-        <a href="Frontend\FrontendPages\mapa\mapa.html">MAPA</a>
+        <a href="Frontend\FrontendPages\mapa\mapa.html">Mapa</a>
       </div>
     </section>
+
+    <div class="divisoria"></div>
 
     <section class="container-fluid row blog">
       <div class="col-md carImg">
@@ -108,6 +115,8 @@
       </div> -->
     </section>
 
+    <div class="divisoria"></div>
+
     <section class="container-fluid row inst m-0">
       <div>
         <h2>SOBRE A DOC HUDSON</h2>
@@ -116,6 +125,9 @@
         <a href="Frontend\FrontendPages\institucional\institucional.html">Saiba Mais</a>
       </div>
     </section>
+
+    <div class="divisoria"></div>
+
 
     <div class="contato">
       <button class="fecha">X</button>

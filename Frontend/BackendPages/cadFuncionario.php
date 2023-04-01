@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Frontend/FrontendPages/cssModalSenha/modal.css">
     <link rel="stylesheet" href="cssBack/modalsenha.css">
-    <title>Document</title>
+    <title>Cadastro Funcionário</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
+
 </head>
 
 <body>
