@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
   `Data` DATE NOT NULL,
   `Horario_ent` TIME NOT NULL,
   `Horario_saida` TIME NULL,
+  `Recarregou_Carro` ENUM (0, 1), 
+  `Valor_vaga`FLOAT NULL,
+  `Valor_eletrico` FLOAT NULL,
   `Valor_pago` FLOAT NULL,
   PRIMARY KEY (`PK_Registro`),
   CONSTRAINT `Usuario_Registro`
@@ -51,15 +54,15 @@ CREATE TABLE IF NOT EXISTS `estacionamento`.`registros` (
     ON UPDATE NO ACTION
 )
 
+
 ENGINE = InnoDB;
+
 
 insert into usuarios values
 (default, 'Violett', 'Vohor', '11122233396', 'teste', 
 'b123e9e19d217169b981a61188920f9d28638709a5132201684d792b9264271b7f09157ed4321b1c097f7a4abecfc0977d40a7ee599c845883bd1074ca23c4af',
 '2023-03-23',
 'Adm');
-
-select * from usuarios;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
