@@ -13,7 +13,8 @@ $resultado = mysqli_query($conn, $comando);
 
 $array = mysqli_fetch_assoc($resultado);
 $_SESSION['array'] = $array;
-// retorna Array ( [PK_Registro] => 4 [FK_Usuario] => 1 [Nome] => michael [Telefone] => 11978969547 [Placa] => acs2134 [Data] => 2023-03-24 [Horario_ent] => 15:01:21 [Horario_saida] => [Valor_pago] => )
+
+// retorna Array ( [PK_Registro] => 4 [FK_Usuario] => 1 [Nome] => michael [Telefone] => 11978969547 [Placa] => acs2134 [Data] => 2023-03-24 [Horario_ent] => 15:01:21 [Horario_saida] => [Recarregou_Carro] => 0 ou 1 [Valor_Vaga] => [Valor_eletrico] => [Valor_pago] => )
 
 // Pega a hora atual
 $hhh = date('H:i:s');
@@ -30,18 +31,6 @@ $diferenca = $horario1->diff($hh);
 $gethora = intval($diferenca->format('%H'));
 $getminuto = intval($diferenca->format('%I'));
 
-//funfou
-
-// if (($gethora == 0 && $getminuto >= 16) || ($gethora == 1 && $getminuto == 0)){
-//     $valortotal = 27;
-// } elseif (($gethora == 1 && $getminuto >= 1) || ($gethora == 2 && $getminuto == 0)){
-//     $valortotal = 32;
-// } else {
-//     if($getminuto > 0) {
-//         $gethora += 1;
-//     }
-//     $valortotal = 32 + ($gethora - 2) * 9;
-// }
 
 // Verifica se a hora é igual a zero
 if ($gethora == 0) {
@@ -78,6 +67,20 @@ if ($gethora == 0) {
     // será cobrado 32 + 9 * horas a mais de 2 horas
     $valortotal = 32 + ($gethora - 2) * 9;
 }
+
+
+/*
+    tabela depreços por energia elétrica:
+        1 minuto => R$0,25
+        1 hora   => R$15
+
+*/
+
+
+if ($array['Recarregou_carro'] == 1){
+    
+}
+
 
 header("Location: " . $detalhesRoute);
 $_SESSION['result'] = $valortotal;
