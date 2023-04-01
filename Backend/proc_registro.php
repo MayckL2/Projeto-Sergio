@@ -12,7 +12,7 @@ $placa = htmlspecialchars($_POST['placa']);
 $recarga = htmlspecialchars($_POST['recar']);
 $replaceTel = ['(', ')', '-'];
 $telefone = str_replace($replaceTel, '', $telefone); // Remove os parenteses e hifen do telefone
-echo $_SESSION['id'];   
+  
 // Pega a data de hoje e o horário atual
 $hoje = date('Y-m-d');
 $hora = date('H:i:s');

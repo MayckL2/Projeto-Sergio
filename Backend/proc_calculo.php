@@ -38,10 +38,10 @@ if ($gethora == 0) {
     // se for igual a zero e os minutos menor que 16
     if ($getminuto < 16) {
         // o estacionamento será de graça
-        $valortotal = 0;
+        $precovaga = 0;
     } elseif ($getminuto >= 16) {
         // se não for menor que 16, será 27 reais o valor
-        $valortotal = 27;
+        $precovaga = 27;
     }
 
 } elseif ($gethora == 1) { // verifica se a hora é igual a 1
@@ -49,15 +49,15 @@ if ($gethora == 0) {
     // se for e os minutos forem 0
     if ($getminuto == 0) {
         // será cobrado 27 reais
-        $valortotal = 27;
+        $precovaga = 27;
     } elseif ($getminuto >= 1) {
         // se for mais que 0 minutos será cobrado 32 reais
-        $valortotal = 32;
+        $precovaga = 32;
     }
 
 } elseif ($gethora == 2 && $getminuto == 0) { // se for 2 horas e 0 minutos
     // será cobrado 32 reais
-    $valortotal = 32;
+    $precovaga = 32;
 
 } elseif ($gethora >= 2 && $getminuto > 0) {
     // se for igual ou maior a 2 horas e mais de 0 minutos
@@ -65,7 +65,7 @@ if ($gethora == 0) {
         $gethora += 1;
     }
     // será cobrado 32 + 9 * horas a mais de 2 horas
-    $valortotal = 32 + ($gethora - 2) * 9;
+    $precovaga = 32 + ($gethora - 2) * 9;
 }
 
 
@@ -78,12 +78,16 @@ if ($gethora == 0) {
 
 
 if ($array['Recarregou_carro'] == 1){
-    
+    $precorecarga = ($gethora * 15) + ($getminuto * 0.25);
 }
+
+$valortotal = $precovaga + $valorrecarga;
 
 
 header("Location: " . $detalhesRoute);
-$_SESSION['result'] = $valortotal;
+$_SESSION['precovaga'] = $precovaga;
+$_SESSION['precorecarga'] = $precorecarga;
+$_SESSION['total'] = $valortotal;
 
 
 ?>

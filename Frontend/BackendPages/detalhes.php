@@ -17,7 +17,9 @@
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];
         $hhh = date("H:i:s");
-        $valortotal = $_SESSION['result'];
+        $precovaga = $_SESSION['precovaga'];
+        $precorecarga =$_SESSION['precorecarga'];
+        $valortotal = $_SESSION['total'];
 
         echo '
             <form action="' . $procDetalhesRoute . '" method="post">
