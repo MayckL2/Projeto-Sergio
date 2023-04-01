@@ -20,6 +20,8 @@
         $precovaga = $_SESSION['precovaga'];
         $precorecarga =$_SESSION['precorecarga'];
         $valortotal = $_SESSION['total'];
+        $data = new DateTime($array['Data']);
+
 
         echo '
             <form action="' . $procDetalhesRoute . '" method="post">
@@ -42,7 +44,7 @@
     
                 <label for="data">DATA :</label>
                 <p id="data">
-                    ' . $array['Data'] . '
+                    ' . $data -> format("d-m-Y") . '
                 </p>
     
                 <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
@@ -55,10 +57,21 @@
                     ' . $hhh . '
                 </p>
     
-                <label for="valor">VALOR A PAGAR :</label>
-                <p id="valor">
+                <label for="valorvaga">VALOR DA VAGA :</label>
+                <p id="valorvaga">
+                    ' . $precovaga . '
+                </p>
+
+                <label for="valorrecarga">VALOR DA RECARGA :</label>
+                <p id="valorrecarga">
+                    ' . $precorecarga . '
+                </p>
+
+                <label for="total">VALOR TOTAL:</label>
+                <p id="total">
                     ' . $valortotal . '
                 </p>
+
                 <input type="submit" value="CONFIRMAR">
     
                 <a href= ' . $listaRoute . '>VOLTAR</a>
