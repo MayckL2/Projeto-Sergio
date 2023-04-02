@@ -1,0 +1,51 @@
+.divisoria{
+  height: 3px;
+  background-color: black;
+}
+
+footer{
+  margin-top: 0;
+}
+
+.mark{
+  background-color: #424242 !important;
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin: 0 auto !important;
+  padding: 20px !important;
+}
+
+@media (max-width: 800px) {
+  .mark{
+    height: auto;
+  }
+}
+
+.mark div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mark div img{
+  width: 100px;
+  border: 8px solid orange;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.mark div .maior{
+  width: 150px;
+}
+
+.mark div h2{
+  color: orange;
+}
+
+.mark div p{
+  color: white;
+  text-align: center;
+  width: 50%;
+}

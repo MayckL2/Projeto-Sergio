@@ -1,0 +1,17 @@
+header{border-radius: 0;}
+
+
+.mapa{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.mapa iframe{
+    width: 100vw;
+    height: 90vh;
+}
+
+.item-mapa{
+    color: orange    !important;
+}

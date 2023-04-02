@@ -1,0 +1,45 @@
+body, hr{
+    color: black;
+    background-color: black!important;
+    border-radius: 0px;
+    overflow-x: hidden;   
+}
+
+.noticias{
+    background-attachment: fixed;
+    background-image: url(../../img/fundoClientes.png);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    padding: 300px 0; 
+    display: flex;
+    align-items: center;
+
+}
+
+strong{
+
+    color: #F16F55 ;
+    font-size: 20px;
+
+}
+
+.botaoCarousel{
+
+    text-decoration: none;
+    color: orange;
+    border: solid;
+    padding: 5px 30px;
+    transition: all 0.5s;
+    background: transparent;
+    font-weight: 700;
+}
+
+.botaoCarousel:hover{
+    background-color: orange;
+    color: white;
+    border: solid transparent;
+    
+}
+
+
