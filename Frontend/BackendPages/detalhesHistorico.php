@@ -15,11 +15,16 @@
     <?php
     session_start();
     include_once("../../rotas.php");
+    include_once($connRoute);
     date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
     
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-        $array = $_SESSION['array'];
-        $hhh = date("H:i:s");
+        $id = $_GET['id'];
+
+        $comando = "select * from registros where PK_Registro = '$id';";
+        $resultado = mysqli_query($conn, $comando);
+        $array = $resultado->fetch_assoc();
+
         $precovaga = $_SESSION['precovaga'];
         $precorecarga =$_SESSION['precorecarga'];
         $valortotal = $_SESSION['total'];
@@ -72,7 +77,7 @@
                 <div>
                     <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
                     <p id="horaSaida">
-                        ' . $hhh . '
+                        ' . $array['Horario_saida'] . '
                     </p>
                 </div>
 

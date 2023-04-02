@@ -134,7 +134,7 @@
 
     // Faz uma query para retornar todos os registros que não foram fechados
     $resultado = mysqli_query($conn, "SELECT * FROM registros
-    WHERE Horario_saida IS NOT NULL AND Placa like '%$pesq%' and Data = '$hoje' 
+    WHERE Horario_saida IS NOT NULL AND Placa like '%$pesq%' and Data = '$hoje'
     LIMIT $inicio, $qnt_result_pg");
 
     // Retorna todos os registros coletados na query, e adicionar no array rows
@@ -149,7 +149,7 @@
       $hora_entrada = new DateTime($row[6]);
       $hora_saida = new DateTime($row[7]);
       $diferenca = $hora_entrada->diff($hora_saida);
-      $tempPerm = $diferenca->format('%H:%I');
+      $tempPerm = $diferenca->format('%H:%I:%S');
 
       echo "
           <div>

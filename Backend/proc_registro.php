@@ -9,7 +9,8 @@ date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São P
 $nome = htmlspecialchars($_POST['nome']);
 $telefone = htmlspecialchars($_POST['telefone']);
 $placa = htmlspecialchars($_POST['placa']);
-$replaceTel = ['(', ')', '-']; 
+$recarga = htmlspecialchars($_POST['recar']);
+$replaceTel = ['(', ')', '-'];
 $telefone = str_replace($replaceTel, '', $telefone); // Remove os parenteses e hifen do telefone
 
 // Pega a data de hoje e o horário atual
@@ -30,11 +31,11 @@ foreach ($pla as $placaa) {
 }
 
 
-if ($existe == 0){
+if ($existe == 0) {
     // Insere o registro da nova entrada
     $result_empresa = "INSERT INTO registros
-    (PK_Registro, FK_Usuario, Nome, Telefone, Placa, Data, Horario_ent)
-    VALUES (default, '" . $_SESSION['id'] . "' , '$nome', '$telefone', '$placa', '$hoje', '$hora')";
+    (PK_Registro, FK_Usuario, Nome, Telefone, Placa, Data, Horario_ent, Recarregou_Carro)
+    VALUES (default, '" . $_SESSION['id'] . "' , '$nome', '$telefone', '$placa', '$hoje', '$hora', '$recarga')";
     // executa a inserção do registro
     $resultado_empresa = mysqli_query($conn, $result_empresa);
 
@@ -49,7 +50,6 @@ if ($existe == 0){
         header("Location: " . $registroRoute);
     }
     
-
 } else {
 
     $_SESSION['msg'] = "<p style = 'color: red';>Placa já está cadastrada e não possui um fechamento ainda<p>";

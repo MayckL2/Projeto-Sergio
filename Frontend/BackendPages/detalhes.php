@@ -20,6 +20,8 @@
     
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];
+        unset($_SESSION['array']);
+        
         $hhh = date("H:i:s");
         $precovaga = $_SESSION['precovaga'];
         $precorecarga =$_SESSION['precorecarga'];
