@@ -8,7 +8,6 @@
     <title>Detalhes Histórico</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
     <link rel="stylesheet" href="./cssBack/detalhes.css">
-
 </head>
 
 <body>
@@ -24,14 +23,11 @@
         $comando = "select * from registros where PK_Registro = '$id';";
         $resultado = mysqli_query($conn, $comando);
         $array = $resultado->fetch_assoc();
-
-        $precovaga = $_SESSION['precovaga'];
-        $precorecarga =$_SESSION['precorecarga'];
-        $valortotal = $_SESSION['total'];
+        
         $data = new DateTime($array['Data']);
 
         echo '
-                <form>
+            <form>
                 <div>
                     <label for="nome">NOME :</label>
                     <p id="nome">
@@ -47,6 +43,7 @@
                         ' . $array['Telefone'] . '
                     </p>
                 </div>
+
                 <br>
 
                 <div>
@@ -55,15 +52,16 @@
                         ' . $array['Placa'] . '
                     </p>
                 </div>
+
                 <br>
 
                 <div>
-        
                     <label for="data">DATA :</label>
                     <p id="data">
-                        ' . $data -> format("d / m / Y") . '
+                        ' . $data -> format("d/m/Y") . '
                     </p>
                 </div>
+
                 <br>
 
                 <div>
@@ -72,6 +70,7 @@
                         ' . $array['Horario_ent'] . '
                     </p>
                 </div>
+
                 <br>
 
                 <div>
@@ -86,7 +85,7 @@
                 <div>
                     <label for="valorvaga">VALOR DA VAGA :</label>
                     <p id="valorvaga">
-                        R$ ' . $precovaga . '
+                        R$ ' . $array['Valor_vaga'] . '
                     </p>
                 </div>
     
@@ -95,7 +94,7 @@
                 <div>
                     <label for="valorrecarga">VALOR DA RECARGA :</label>
                     <p id="valorrecarga">
-                        R$ ' . $precorecarga . '
+                        R$ ' . $array['Valor_eletrico'] . '
                     </p>
                 </div>
     
@@ -104,19 +103,16 @@
                 <div>
                     <label for="total">VALOR TOTAL:</label>
                     <p id="total">
-                        R$ ' . $valortotal . '
+                        R$ ' . $array['Valor_pago'] . '
                     </p>
                 </div>
                 <br>
                 <a href= ' . $historicoRoute . '>VOLTAR</a>
-
-                </form>';
-
+            </form>';
     } else {
         header("Location: " . $loginRoute);
     }
     ?>
-
 
 </body>
 

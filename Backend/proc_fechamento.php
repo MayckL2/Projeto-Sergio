@@ -10,11 +10,8 @@ $comando = 'select placa, Horario_ent, Recarregou_Carro from registros where Hor
 $resultado = mysqli_query($conn, $comando);
 $ver = $resultado->fetch_all();
 
-
 foreach ($ver as $registro) {
-    $precorecarga = 0;
     // Pega a hora atual
-    $hhh = date('H:i:s');
     $hora = date('H:i:s');
 
     // Converte a string hora e a string Horario_ent em um DateTime object
@@ -64,24 +61,14 @@ foreach ($ver as $registro) {
     }
 
     if ($registro[2] == 1) {
-
         $precorecarga = ($gethora * 15) + ($getminuto * 0.25);
-
     } else {
-
         $precorecarga = 0;
-
     }
 
     $valortotal = $precovaga + $precorecarga;
 
-
-    // $_SESSION['precovaga'] = $precovaga;
-    // $_SESSION['precorecarga'] = $precorecarga;
-    // $_SESSION['total'] = $valortotal;
-
-
-    $comando2 = "update registros set Horario_saida = '$hhh', Valor_vaga = '$precovaga',
+    $comando2 = "update registros set Horario_saida = '$hora', Valor_vaga = '$precovaga',
     Valor_eletrico = '$precorecarga',  Valor_pago = '$valortotal' where placa = '$registro[0]';";
     $resultado = mysqli_query($conn, $comando2);
 }

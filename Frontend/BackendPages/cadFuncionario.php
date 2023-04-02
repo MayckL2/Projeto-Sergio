@@ -24,9 +24,9 @@
 
     // Verifica se o usuário logado é adm
     if ($_SESSION['tipo'] == "Adm") {
-        if (isset($_SESSION['msg'])) {
-            echo $_SESSION['msg'];
-            unset($_SESSION['msg']);
+        if (isset($_SESSION['msgFun'])) {
+            echo $_SESSION['msgFun'];
+            unset($_SESSION['msgFun']);
         }
         // começo da tela
         echo '

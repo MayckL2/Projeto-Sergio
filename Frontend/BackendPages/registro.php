@@ -13,14 +13,15 @@
 <body>
     <?php
     session_start();
-    if (isset($_SESSION['msg'])) {
-        echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
-    }
+    
     include_once("../../rotas.php"); // Inclui o arquivo de rotas
     include_once($connRoute); // Inclui o arquivo de conexao
     
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        if (isset($_SESSION['msgregistronao'])) {
+            echo $_SESSION['msgregistronao'];
+            unset($_SESSION['msgregistronao']);
+        }
         echo '
         <form action="' . $procRegistroRoute . '"method="POST">
             <h1>Nova Entrada</h1>

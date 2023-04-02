@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
-
     <link rel="stylesheet" href="./cssBack/detalhes.css">
-
 </head>
 
 <body>
@@ -21,7 +19,6 @@
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];
         
-        
         $hhh = date("H:i:s");
         $precovaga = $_SESSION['precovaga'];
         $precorecarga =$_SESSION['precorecarga'];
@@ -30,7 +27,6 @@
 
         echo '
             <form action="' . $procDetalhesRoute . '" method="post">
-        
             <div>
                 <label for="nome">NOME:</label>
                 <p id="nome">
@@ -62,7 +58,7 @@
             <div>
                 <label for="data">DATA:</label>
                 <p id="data">
-                    ' . $data -> format("d / m / Y") . '
+                    ' . $data -> format("d/m/Y") . '
                 </p>
             </div>
 
@@ -77,7 +73,6 @@
             </div>
 
             <br>
-
 
             <div>
                 <label for="horaSaida">HORÁRIO DE SAÍDA:</label>
@@ -117,15 +112,11 @@
             <input type="submit" value="Confirmar">
 
             <a href= ' . $listaRoute . '>VOLTAR</a>
-            
-    
         </form>';
-
     } else {
         header("Location: " . $loginRoute);
     }
     ?>
-
 
 </body>
 

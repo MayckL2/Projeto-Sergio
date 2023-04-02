@@ -3,6 +3,8 @@ session_start();
 include_once("../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexão
 
+date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
+
 // Pega os valores do registro que está sendo fechado
 $dados = $_SESSION['array'];
 $id = $dados['PK_Registro'];

@@ -171,7 +171,7 @@
 
             <fieldset>
             <legend>Preço</legend>
-            <p>$row[8]</p>
+            <p>$row[11]</p>
             </fieldset>
 
             <!-- row[0] puxa o id -->

@@ -5,6 +5,7 @@ include_once($connRoute); // Inclui o arquivo de conexao
 date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
 
 
+
 // Pega os inputs do form
 $nome = htmlspecialchars($_POST['nome']);
 $telefone = htmlspecialchars($_POST['telefone']);
@@ -41,18 +42,18 @@ if ($existe == 0) {
 
     // Verifica se a execução ocorreu corretamente
     if (mysqli_insert_id($conn)) {
-        $_SESSION['msg'] = "<p style= 'color:green;'>Registro realizado com sucesso</p>";
+        $_SESSION['msgregistrosim'] = "<p style= 'color:green;'>Registro realizado com sucesso</p>";
         // se sim o usuário irá pra pagina lista
         header("Location: ". $listaRoute);
     } else {
-        $_SESSION['msg'] = "<p style='color:red;'>Registro não foi realizado</p>";
+        $_SESSION['msgregistronao'] = "<p style='color:red;'>Registro não foi realizado</p>";
         // Se não volta pro registro
         header("Location: " . $registroRoute);
     }
     
 } else {
 
-    $_SESSION['msg'] = "<p style = 'color: red';>Placa já está cadastrada e não possui um fechamento ainda<p>";
+    $_SESSION['msgregistronao'] = "<p style = 'color: red';>Placa já está cadastrada e não possui um fechamento ainda<p>";
     header("Location: " . $registroRoute);
 
 

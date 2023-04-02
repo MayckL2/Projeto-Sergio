@@ -2,7 +2,6 @@
 session_start();
 include_once("../../rotas.php"); // Inclui o arquivo de rotas
 include_once($connRoute); // Inclui o arquivo de conexao
-
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +33,10 @@ include_once($connRoute); // Inclui o arquivo de conexao
             <h1>Sing In</h1>
 
             <?php 
-
-                if (isset($_SESSION['msg'])) {
-                    echo $_SESSION['msg'];
-                    unset($_SESSION['msg']);
+                if (isset($_SESSION['msglogin'])) {
+                    echo $_SESSION['msglogin'];
+                    unset($_SESSION['msglogin']);
                 }
-
             ?>
 
             <div class="login">
@@ -61,8 +58,6 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
             <input type="submit" value="Entrar">
             <a class="voltar" href=<?php echo $homeRoute; ?>>Voltar</a>
-            
-            
         </form>
 
     </div>

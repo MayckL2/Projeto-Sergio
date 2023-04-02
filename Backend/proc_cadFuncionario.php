@@ -86,15 +86,15 @@ if ($certo1 && $certo2 && $ext == 0) {
 
     // Se a inserção ocorre normalmente, o usuário é enviado para a página de login
     if (mysqli_insert_id($conn)) {
-        $_SESSION['msg'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
+        $_SESSION['msgFun'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
         header("Location: ". $loginRoute);
     } else {
         // Senão, o usuário voltará pra página de cadastro
-        $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
+        $_SESSION['msgFun'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
         header("Location: " . $cadFunRoute);
     }
 } else {
     // Se o cpf estiver errado o usuário voltará pra página de cadastro.
-    $_SESSION['msg'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
+    $_SESSION['msgFun'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
     header("Location: " . $cadFunRoute);
 }
