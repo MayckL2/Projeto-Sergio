@@ -1,5 +1,10 @@
 a{
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.sem-bold{
+  font-weight: 300;
+  background-color: aqua;
 }
 
 .blog{

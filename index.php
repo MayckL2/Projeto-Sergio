@@ -35,7 +35,7 @@
         <img onclick="chamaMenu()" src="Frontend/FrontendPages/img/menu-suspenso.png" class="menu" alt="menu">
 
         <ul class="retratil">
-            <li class="menuItens" style="font-weight: 0;"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
+            <li class="menuItens" style="font-weight:400;"><a href="Frontend\FrontendPages\mapa\mapa.html">Mapa de localização</a></li>
             <li class="menuItens"><a href="Frontend\FrontendPages\blog\blog.html">Blog</a></li>
             <li class="menuItens"><a href="Frontend\FrontendPages\institucional\institucional.html">Institucional</a></li>
             <li><a href="<?php echo $loginRoute; ?>">Login</a></li>
@@ -59,7 +59,7 @@
       <div class="col-md">
         <img src="Frontend/FrontendPages/img/ciber-seguranca 1.png" alt="segurança">
         <h2>Segurança</h2>
-        <p>Mantemos seu carro seguro enquanto você precisar</p>
+        <p>Mantemos seu carro segura enquanto você precisar</p>
       </div>
       
       <div class="col-md">
@@ -90,7 +90,7 @@
 
       <div class="col-md descMap">
         <h2>MAPA DE LOCALIZAÇÃO NA CIDADE DE SÃO PAULO</h2>
-        <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os</p>
+        <p>Nossa página de mapa interativo é a maneira mais fácil de encontrar nossa localização e planejar sua rota até nós. Explore a região, encontre lugares de interesse e navegue facilmente pelo mapa usando as ferramentas intuitivas.</p>
         <a href="Frontend\FrontendPages\mapa\mapa.html">Mapa</a>
       </div>
     </section>
@@ -106,7 +106,7 @@
       <div class="col-md descBlog">
         <h2>CONHEÇA NOSSO BLOG</h2>
         <p>Este é o nosso espaço com dicas, notícias, novidades e informações úteis sobre
-          os principais eventos que contam com nossos estacionamentos, mobilidade urbana e mais!</p>
+          os principais eventos que contam com nossos estacionamentos, mobilidade urbana, e mais!</p>
         <a href="Frontend\FrontendPages\blog\blog.html">Saiba mais</a>
       </div>
 
@@ -120,7 +120,7 @@
     <section class="container-fluid row inst m-0">
       <div>
         <h2>SOBRE A DOC HUDSON</h2>
-        <p>Buscamos através da inovação tecnologica a maior segurança e comodidade para o seu carro
+        <p>Buscamos através da inovação tecnologica a maior segurança e comobidade para o seu carro
           em uma localização coringa para o dia a dia em São Paulo</p>
         <a href="Frontend\FrontendPages\institucional\institucional.html">Saiba Mais</a>
       </div>

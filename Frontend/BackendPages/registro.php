@@ -27,22 +27,14 @@
             <input type="text" id="nome" name="nome" autofocus required><br><br>
 
             <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone"
-            pattern="[?(][0-9]{2}[?)][9][0-9]{4}[?-][0-9]{4}" required><br><br>
+            <input type="text" id="telefone" name="telefone" pattern="[0-9]{11}" required><br><br>
 
             <label for="placa">Placa:</label>
-            <input type="text" id="placa" name="placa" pattern="[A-Z]{3}\d[A-Z0-9]\d{2}"
-            oninput="this.value = this.value.toUpperCase()" required><br>
-
-            <p>Vai recarregar o carro?</p>
-            <label for="sim">Sim</label>
-            <input type="radio" name="recar" id="sim" value="1" required>
-            <label for="nao">Não</label>
-            <input type="radio" name="recar" id="nao" value="0"><br><br>
+            <input type="text" id="placa" name="placa" pattern="[A-Z]{3}\d[A-Z0-9]\d{2}" oninput="this.value = this.value.toUpperCase()" required><br><br>
 
             <input type="submit" value="Enviar">
             <a href=' . $listaRoute . ' ?>VOLTAR</a>
-        </form>';
+        </form>';   
     } else {
         header("Location: " . $loginRoute);
     }
