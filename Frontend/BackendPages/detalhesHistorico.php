@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes Histórico</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
+    <link rel="stylesheet" href="./cssBack/detalhes.css">
 
 </head>
 
@@ -19,50 +20,92 @@
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         $array = $_SESSION['array'];
         $hhh = date("H:i:s");
-        $valortotal = $_SESSION['result'];
+        $precovaga = $_SESSION['precovaga'];
+        $precorecarga =$_SESSION['precorecarga'];
+        $valortotal = $_SESSION['total'];
+        $data = new DateTime($array['Data']);
 
         echo '
+                <form>
+                <div>
+                    <label for="nome">NOME :</label>
+                    <p id="nome">
+                        ' . $array['Nome'] . '
+                    </p>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="telefone">TELEFONE :</label>
+                    <p id="telefone">
+                        ' . $array['Telefone'] . '
+                    </p>
+                </div>
+                <br>
+
+                <div>
+                    <label for="placa">PLACA :</label>
+                    <p id="placa">
+                        ' . $array['Placa'] . '
+                    </p>
+                </div>
+                <br>
+
+                <div>
         
-            <div>
-                <label for="nome">NOME :</label>
-                <p id="nome">
-                    ' . $array['Nome'] . '
-                </p>
+                    <label for="data">DATA :</label>
+                    <p id="data">
+                        ' . $data -> format("d / m / Y") . '
+                    </p>
+                </div>
+                <br>
+
+                <div>
+                    <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
+                    <p id="horaEntrada">
+                        ' . $array['Horario_ent'] . '
+                    </p>
+                </div>
+                <br>
+
+                <div>
+                    <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
+                    <p id="horaSaida">
+                        ' . $hhh . '
+                    </p>
+                </div>
+
+                <br>
     
-                <label for="telefone">TELEFONE :</label>
-                <p id="telefone">
-                    ' . $array['Telefone'] . '
-                </p>
+                <div>
+                    <label for="valorvaga">VALOR DA VAGA :</label>
+                    <p id="valorvaga">
+                        R$ ' . $precovaga . '
+                    </p>
+                </div>
     
-                <label for="placa">PLACA :</label>
-                <p id="placa">
-                    ' . $array['Placa'] . '
-                </p>
+                <br>
     
-                <label for="data">DATA :</label>
-                <p id="data">
-                    ' . $array['Data'] . '
-                </p>
+                <div>
+                    <label for="valorrecarga">VALOR DA RECARGA :</label>
+                    <p id="valorrecarga">
+                        R$ ' . $precorecarga . '
+                    </p>
+                </div>
     
-                <label for="horaEntrada">HORÁRIO DE ENTRADA :</label>
-                <p id="horaEntrada">
-                    ' . $array['Horario_ent'] . '
-                </p>
+                <br>
     
-                <label for="horaSaida">HORÁRIO DE SAÍDA :</label>
-                <p id="horaSaida">
-                    ' . $hhh . '
-                </p>
-    
-                <label for="valor">VALOR A PAGAR :</label>
-                <p id="valor">
-                    ' . $valortotal . '
-                </p>
-    
+                <div>
+                    <label for="total">VALOR TOTAL:</label>
+                    <p id="total">
+                        R$ ' . $valortotal . '
+                    </p>
+                </div>
+                <br>
                 <a href= ' . $historicoRoute . '>VOLTAR</a>
-            </div>
-    
-        ';
+
+                </form>';
 
     } else {
         header("Location: " . $loginRoute);

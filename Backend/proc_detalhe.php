@@ -7,12 +7,15 @@ include_once($connRoute); // Inclui o arquivo de conexão
 $dados = $_SESSION['array'];
 $id = $dados['PK_Registro'];
 $hora_saida = date("H:i:s");
-$value = $_SESSION['result'];
+$vvaga = $_SESSION['precovaga'];
+$vrec = $_SESSION['precorecarga'];
+$value = $_SESSION['total'];
 
 // Atualiza o registro no banco de dados
 // com o horário de saída e o valor pago
 $comando = "update registros set
-    Horario_saida = '$hora_saida', Valor_pago = '$value'
+    Horario_saida = '$hora_saida',Valor_vaga = '$vvaga',
+    Valor_eletrico = '$vrec', Valor_pago = '$value'
     where PK_registro = '$id'";
 
 mysqli_query($conn, $comando);
@@ -23,5 +26,3 @@ if (mysqli_affected_rows($conn) > 0) {
 } else {
     echo '<p>Fechamento de registro nâo efetuado</p>';
 }
-
-?>
