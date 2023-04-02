@@ -7,9 +7,7 @@ include_once($connRoute); // Inclui o arquivo de conexão
 $dados = $_SESSION['array'];
 $id = $dados['PK_Registro'];
 $hora_saida = date("H:i:s");
-$vvaga = $_SESSION['precovaga'];
-$vrec = $_SESSION['precorecarga'];
-$value = $_SESSION['total'];
+$value = $_SESSION['result'];
 
 // Atualiza o registro no banco de dados
 // com o horário de saída e o valor pago

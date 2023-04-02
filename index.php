@@ -59,7 +59,7 @@
       <div class="col-md">
         <img src="Frontend/FrontendPages/img/ciber-seguranca 1.png" alt="segurança">
         <h2>Segurança</h2>
-        <p>Mantemos seu carro seguro enquanto você precisar</p>
+        <p>Mantemos seu carro segura enquanto você precisar</p>
       </div>
       
       <div class="col-md">
@@ -106,7 +106,7 @@
       <div class="col-md descBlog">
         <h2>CONHEÇA NOSSO BLOG</h2>
         <p>Este é o nosso espaço com dicas, notícias, novidades e informações úteis sobre
-          os principais eventos que contam com nossos estacionamentos, mobilidade urbana e mais!</p>
+          os principais eventos que contam com nossos estacionamentos, mobilidade urbana, e mais!</p>
         <a href="Frontend\FrontendPages\blog\blog.html">Saiba mais</a>
       </div>
 
@@ -120,7 +120,7 @@
     <section class="container-fluid row inst m-0">
       <div>
         <h2>SOBRE A DOC HUDSON</h2>
-        <p>Buscamos através da inovação tecnologica a maior segurança e comodidade para o seu carro
+        <p>Buscamos através da inovação tecnologica a maior segurança e comobidade para o seu carro
           em uma localização coringa para o dia a dia em São Paulo</p>
         <a href="Frontend\FrontendPages\institucional\institucional.html">Saiba Mais</a>
       </div>
