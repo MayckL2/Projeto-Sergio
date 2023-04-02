@@ -11,6 +11,8 @@
 
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
 
+    <link rel="stylesheet" href="./cssBack/cadFuncionario.css">
+
 </head>
 
 <body>
@@ -29,6 +31,8 @@
         // começo da tela
         echo '
         <form action="' .$procCadFunRoute. '" method="POST">
+
+            <h1>Cadastro Funcionário</h1>
 
             <fieldset>
                 <legend>CPF</legend>
@@ -73,6 +77,7 @@
                 </div>
                 
             </div>
+            
             <fieldset>
                 <legend>CONFIRME A SENHA</legend>
                 <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
