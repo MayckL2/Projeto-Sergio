@@ -34,7 +34,7 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
             <?php 
                 if (isset($_SESSION['msglogin'])) {
-                    echo $_SESSION['msglogin'];
+                    echo "<p>".$_SESSION['msglogin']."</p>";
                     unset($_SESSION['msglogin']);
                 }
             ?>

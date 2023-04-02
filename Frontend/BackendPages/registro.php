@@ -19,7 +19,7 @@
     
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
         if (isset($_SESSION['msgregistronao'])) {
-            echo $_SESSION['msgregistronao'];
+            echo "<p>".$_SESSION['msgregistronao']."</p>";
             unset($_SESSION['msgregistronao']);
         }
         echo '
