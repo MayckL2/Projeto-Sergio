@@ -22,6 +22,7 @@ mysqli_query($conn, $comando);
 
 // Caso ocorra tudo certo, o usuário é enviado à páginda de lista;
 if (mysqli_affected_rows($conn) > 0) {
+    unset($_SESSION['array']);
     header("Location: " . $listaRoute);
 } else {
     echo '<p>Fechamento de registro nâo efetuado</p>';

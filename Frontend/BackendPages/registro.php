@@ -29,7 +29,7 @@
 
             <label for="telefone">Telefone</label>
             <input type="text" id="telefone" name="telefone"
-            pattern="[?(][0-9]{2}[?)][9][0-9]{4}[?-][0-9]{4}" required><br><br>
+            pattern="(\(\d{2}\)|\d{2})?9\d{4}[-]?\d{4}" required><br><br>
 
             <label for="placa">Placa</label>
             <input type="text" id="placa" name="placa" pattern="[A-Z]{3}\d[A-Z0-9]\d{2}"
