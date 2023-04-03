@@ -1,26 +1,30 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background-color: gray;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #f49555;
+border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #aaa;
+}
+    
+
 body{
     background-image: url(https://images4.alphacoders.com/209/209316.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    
     display: grid;
     place-items: center;
-    height: 90vh;
-    overflow: hidden;
+  
     
 
-}
-
-
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 50px;
-    gap: 10px;
-    border-radius: 0 30px 0 30px;
 }
 
 fieldset{
@@ -40,11 +44,7 @@ legend{
 input{
     padding: 0;
     outline: none;
-    border: none;
-    /* background-color:aqua ; */
-   
-
-
+    border: none;   
 }
 
 input[name="senha"],
@@ -62,7 +62,7 @@ input[value="?"]{
     cursor: pointer;
 }
 
-input[type="submit"]{
+input[type="submit"], #voltar{
     background-color: rgb(46, 162, 46);
     padding: 10px;
     cursor: pointer;
@@ -72,22 +72,21 @@ input[type="submit"]{
 
 }
 
+#voltar{
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.btns-cad{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 a{
     font-size: 10px;
 }
 
-body{
-    background-image: url(https://images4.alphacoders.com/209/209316.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    
-    display: grid;
-    place-items: center;
-    height: 90vh;
-    overflow: hidden;
-    
-
-}
 
 
 form{

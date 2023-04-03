@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cssBack/modalfechamento.css">
   <title>Carros cadastrados</title>
-
+  
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
 
-
+  
+  
+  
+  <link rel="stylesheet" href="cssBack/modalfechamento.css">
   <link rel="stylesheet" href="cssBack/lista.css">
+
 </head>
 
-<body>
+<body onresize="checaDispositivo()" onload="checaDispositivo()">
   <?php
   session_start();
   include_once("../../rotas.php");
@@ -22,37 +25,49 @@
 
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 
-    if (isset($_SESSION['msgregistrosim'])) {
-      echo "<p>".$_SESSION['msgregistrosim']."</p>";
-      unset($_SESSION['msgregistrosim']);
-    }
+    
 
     echo "
-      <div class='back'>
       <header>
-      <img src='img/logo.png'>
+
+      <a href='' class='logo'>
+      <img src='img/logo.png' alt='logoEmpresa'>
+      </a>
+
+      <img onclick='chamaMenu()' src='../FrontendPages/img/menu-suspenso.png' class='menu' alt='menu'>
+      
+      <div class='botoesHeader retratil'>
+    
     ";
+
+    
 
     // Caso o tipo do usuário for Adm, mostrará o botão que leva a página de cadastro
     if ($_SESSION['tipo'] == 'Adm') {
-      echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO</a>";
+      echo "<a href='$cadFunRoute'>Cadastrar Funcionários</a>";
     }
 
     echo "
-      <a href='$registroRoute'>NOVA ENTRADA</a>
-      <button id='meuBota'>FECHAMENTO</button>
-      <a href='$historicoRoute'>HISTÓRICO</a>
-      <a href='$procLogoffRoute'>SAIR</a><br>
-      
-      </header>
+      <a href='$registroRoute'>Nova Entrada</a>
+      <a id='meuBota'>Fechamento</a>
+      <a href='$historicoRoute'>Histórico</a>
+      <a href='$procLogoffRoute'>Sair</a><br>
 
       <form action='$listaRoute' method='get'>
-        <input type='text' placeholder='Pesquise por placas' name='pesq'>
-        <input type='submit' value='Pesquisar'>
+      <input type='text' placeholder='Pesquise por placas:' name='pesq'><input type='submit' value='Pesquisar'>
       </form>
-      
       </div>
+     
+      </header>
+
+      
+     
     ";
+
+    if (isset($_SESSION['msgregistrosim'])) {
+      echo "<span>".$_SESSION['msgregistrosim']."</span>";
+      unset($_SESSION['msgregistrosim']);
+    }
 
     if (isset($_GET['pesq'])) {
       $pesq = $_GET['pesq'];
@@ -65,7 +80,7 @@
     $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
     // Setar a quantidade de items por pagina
-    $qnt_result_pg = 9;
+    $qnt_result_pg = 6;
 
     // Calcular o inicio visualização
     $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -164,7 +179,36 @@
   
 </div>
 
+
+<script>
+
+  let menu = document.querySelector(".menu");
+
+  let retratil = document.querySelector(".retratil");
+
+  // exibe menu no mobile
+  function chamaMenu(){
+      if(retratil.style.right == '-1300px'){
+
+        menu.style.rotate= '90deg'
+        retratil.style.right= '0px'
+
+      }else{
+
+        menu.style.rotate= '0deg'
+        retratil.style.right = '-1300px'
+        
+      }
+  }
+
+
+
+</script>
+
 <script src="enginefechamento.js"></script>
+
+
+
 
 </body>
 

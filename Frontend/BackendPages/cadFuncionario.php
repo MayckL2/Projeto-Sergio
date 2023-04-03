@@ -83,9 +83,11 @@
                 <input type="password" name="confsenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\w\s]).{8,}$"><br><br>
             </fieldset>
 
+            <div class="btns-cad">
             <input type="submit" id="enviar" value="Enviar" disabled>
-            <a href=' . $listaRoute . ' ?>VOLTAR</a>
-
+            <a id="voltar" href=' . $listaRoute . '>Voltar</a>
+            </div>
+            
         </form>
         
         <script src='. $confSenhaRoute.'></script>

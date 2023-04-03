@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,10 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Histórico</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
-
+  <link rel="stylesheet" href="cssBack/lista.css">  
 </head>
 
-<link rel="stylesheet" href="cssBack/lista.css">
 
 <body>
 
@@ -22,9 +22,19 @@
   // Verifica se o usuário está logado
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     // Caso o tipo do usuário fo Adm, mostrará o botão que leva a página de cadastro
-    echo "<div class='back'>";
-  
-    echo "<header>";
+    
+    echo "<header>
+    <a href='' class='logo'>
+    <img src='img/logo.png' alt='logoEmpresa'>
+    </a> 
+    
+    <img onclick='chamaMenu()' src='../FrontendPages/img/menu-suspenso.png' class='menu' alt='menu'>
+    
+    <div class='botoesHeader retratil'>
+    
+    ";
+
+    
 
     if ($_SESSION['tipo'] == 'Adm') {
       echo "<a href='$cadFunRoute'>CADASTRAR FUNCIONÁRIO <br></a>";
@@ -32,21 +42,19 @@
     echo "<a href='$registroRoute'>NOVA ENTRADA</a>";
     echo "<a href='$listaRoute'>ENTRADAS</a><br>";
 
+    echo "<form action='$historicoRoute' method='get'>
+    <input type='text' placeholder='pesquise por placas' name='pesq'><input type='submit' value='pesquisar'>
+    </form>";
+
     echo "</header>";
 
-    echo "
-    <form action='$historicoRoute' method='get'>
-      <input type='text' placeholder='pesquise por placas' name='pesq'>
-      <input type='submit' value='pesquisar'>
-    </form>
-    ";
+
 
     echo "<div class='historico'>";
 
     echo "
     <form action='$historicoRoute' method='get'>
-      <input type='date' placeholder='Digite a data para a pesquisa' name='dataa'>
-      <input type='submit' value='pesquisar'>
+      <input type='date' placeholder='Digite a data para a pesquisa' name='dataa'><input type='submit' value='pesquisar'>
     </form>
     ";
 
@@ -83,8 +91,8 @@
 
       $qtd_carros = mysqli_fetch_array($execucao)[0];
 
-      echo "<p style = 'color: green;'>Total ganho referente ao dia $hoje_formatado : R$$total_ganho</p>";
-      echo "<p style = 'color: green;'>Total de carros que estacionaram aqui : $qtd_carros";
+      echo "<p>Total ganho referente ao dia $hoje_formatado : R$$total_ganho</p>";
+      echo "<p>Total de carros que estacionaram aqui : $qtd_carros";
 
 
     } else {
@@ -113,11 +121,11 @@
 
       $qtd_carros = mysqli_fetch_array($execucao)[0];
 
-      echo "<p style = 'color: green;'>Total ganho referente ao dia $hoje_formatado : R$$total_ganho</p>";
-      echo "<p style = 'color: green;'>Total de carros que estacionaram aqui : $qtd_carros";
+      echo "<p>Total ganho referente ao dia $hoje_formatado : R$$total_ganho</p>";
+      echo "<p>Total de carros que estacionaram aqui : $qtd_carros";
+
     } 
 
-    echo "</div>";
     echo "</div>";
 
     // Receber o número da página
@@ -218,6 +226,32 @@
     header("Location: " . $loginRoute);
 
   }?>
+
+
+<script>
+
+let menu = document.querySelector(".menu");
+
+let retratil = document.querySelector(".retratil");
+
+// exibe menu no mobile
+function chamaMenu(){
+    if(retratil.style.right == '-1300px'){
+
+      menu.style.rotate= '90deg'
+      retratil.style.right= '0px'
+
+    }else{
+
+      menu.style.rotate= '0deg'
+      retratil.style.right = '-1300px'
+      
+    }
+}
+
+
+
+</script>
 
 </body>
 

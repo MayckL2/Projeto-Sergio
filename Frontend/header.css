@@ -52,7 +52,6 @@ header{
     position: fixed;
     top: 0px;
     width: 100vw;
-    z-index: 1;
     border-radius: 0px 20px;
     transition: all 0.5s;
     z-index: 3;

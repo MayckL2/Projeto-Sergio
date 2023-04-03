@@ -42,11 +42,11 @@ if ($existe == 0) {
 
     // Verifica se a execução ocorreu corretamente
     if (mysqli_insert_id($conn)) {
-        $_SESSION['msgregistrosim'] = "<p style= 'color:green;'>Registro realizado com sucesso</p>";
+        $_SESSION['msgregistrosim'] = "<span>Registro realizado com sucesso</span>";
         // se sim o usuário irá pra pagina lista
         header("Location: ". $listaRoute);
     } else {
-        $_SESSION['msgregistronao'] = "<p style='color:red;'>Registro não foi realizado</p>";
+        $_SESSION['msgregistronao'] = "<span style='color:red;'>Registro não foi realizado</span>";
         // Se não volta pro registro
         header("Location: " . $registroRoute);
     }

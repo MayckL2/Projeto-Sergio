@@ -8,7 +8,8 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.8);
+    z-index: 999;
   }
   
   /* Modal content */
@@ -43,20 +44,12 @@
     text-decoration: underline transparent;
     border: solid transparent;
     border-radius: 2px;
+    color: orange;
   }
 
-  a:hover{
+  .botoesHeader a:hover{
     border-bottom: solid;
   }
 
-  .naoBtn {
-    padding: 10px;
-    transition: all 0.5s;
-    border: solid transparent;
-    border-radius: 2px;
-  }
 
-  .naoBtn:hover{
-    border-bottom: solid;
-  }
   

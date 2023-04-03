@@ -21,7 +21,7 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
 
 
-<body>
+<body  onresize="checaDispositivo()" onload="checaDispositivo()">
     <div class="container box-conteudo">
 
         <div class="imagem-logo">
