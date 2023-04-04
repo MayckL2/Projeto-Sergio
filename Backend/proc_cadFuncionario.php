@@ -70,31 +70,35 @@ $nlogin = $result -> fetch_all();
 
 $ext = 0;
 
-foreach ($nlogin as $nick){
-    if ($login == $nick){
+foreach ($nlogin as $nick) {
+    if ($login == $nick) {
         $ext = 1;
     }
 }
 
+try {
+    // Se ambos digitos estiverem corretos
+    if ($certo1 && $certo2 && $ext == 0) {
+        // Será feito a inserção do novo usuário no banco
+        $result_empresa = "INSERT INTO usuarios
+        VALUES (default, '$nome', '$sobrenome', '$cpf','$login', '$senha', NOW(), 'Fun')";
+        $resultado_empresa = mysqli_query($conn, $result_empresa);
 
-// Se ambos digitos estiverem corretos
-if ($certo1 && $certo2 && $ext == 0) {
-    // Será feito a inserção do novo usuário no banco
-    $result_empresa = "INSERT INTO usuarios
-    VALUES (default, '$nome', '$sobrenome', '$cpf','$login', '$senha', NOW(), 'Fun')";
-    $resultado_empresa = mysqli_query($conn, $result_empresa);
-
-    // Se a inserção ocorre normalmente, o usuário é enviado para a página de login
-    if (mysqli_insert_id($conn)) {
-        $_SESSION['msgFun'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
-        header("Location: ". $loginRoute);
+        // Se a inserção ocorre normalmente, o usuário é enviado para a página de login
+        if (mysqli_insert_id($conn)) {
+            $_SESSION['msgFun'] = "<p style= 'color:green;'>USUÁRIO CADASTRADO COM SUCESSO</p>";
+            header("Location: ". $loginRoute);
+        } else {
+            // Senão, o usuário voltará pra página de cadastro
+            $_SESSION['msgFun'] = "<p class='erro'>USUÁRIO NÃO FOI CADASTRADO</p>";
+            header("Location: " . $cadFunRoute);
+        }
     } else {
-        // Senão, o usuário voltará pra página de cadastro
-        $_SESSION['msgFun'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO</p>";
+        // Se o cpf estiver errado o usuário voltará pra página de cadastro.
+        $_SESSION['msgFun'] = "<p class='erro'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
         header("Location: " . $cadFunRoute);
     }
-} else {
-    // Se o cpf estiver errado o usuário voltará pra página de cadastro.
-    $_SESSION['msgFun'] = "<p style='color:red;'>USUÁRIO NÃO FOI CADASTRADO - CPF INVÁLIDO</p>";
+} catch (Exception $e) {
+    $_SESSION['msgFun'] = "<p class='erro'>USUÁRIO NÃO FOI CADASTRADO - LOGIN JÁ EXISTENTE</p>";
     header("Location: " . $cadFunRoute);
 }

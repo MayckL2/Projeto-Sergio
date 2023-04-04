@@ -148,6 +148,21 @@ header .menu{
 }
 
 
+input[type="date"]{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    /* font-weight: bold; */
+}
+
+h1{
+    margin-top: 3%;
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
 
 
 
@@ -342,17 +357,15 @@ header .menu{
 
 
 
-
-
-
-
-
-
-
-
-
 .historico{
-    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.historico p{
+    color: #ffffff;
 }
 
 

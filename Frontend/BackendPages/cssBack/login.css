@@ -42,7 +42,7 @@ form{
     background-color:#ffffff;
     border-radius: 0 50px 0 0;
     padding: 70px;
-    gap: 40px;
+    gap: 20px;
 }
 
 form h1{
@@ -74,7 +74,9 @@ p{
     margin: 0;
     padding: 0;
     color: #E14646;
+    font-size: 15px;
     font-weight: bold;
+    
 }
 
 

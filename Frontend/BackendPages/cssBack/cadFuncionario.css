@@ -118,16 +118,13 @@ input{
     padding: 0;
     outline: none;
     border: none;
-    /* background-color:aqua ; */
-   
-
-
-}
-
-input[name="senha"],
-input[value="?"]{
     margin: 7px;
 }
+
+.btns-cad input:disabled{
+    background-color: gray;
+}
+
 
 input[value="?"]{
     width: 25px;
@@ -151,5 +148,10 @@ input[type="submit"]{
 
 a{
     font-size: 10px;
+}
+
+.erro{
+    font-weight: bold;
+    color: black;
 }
 

@@ -9,6 +9,7 @@
   <title>Histórico</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5998/5998796.png">
   <link rel="stylesheet" href="cssBack/lista.css">  
+  <link rel="stylesheet" href="cssBack/modalfechamento.css">
 </head>
 
 
@@ -18,6 +19,7 @@
   session_start();
   include_once("../../rotas.php"); // Inclui o arquivo de rotas
   include_once($connRoute); // Inclui o arquivo de conexao
+  date_default_timezone_set('America/Sao_Paulo'); // Define o timezone para São Paulo
   
   // Verifica se o usuário está logado
   if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
@@ -46,13 +48,16 @@
     <input type='text' placeholder='pesquise por placas' name='pesq'><input type='submit' value='pesquisar'>
     </form>";
 
-    echo "</header>";
+    echo " </header>
+    ";
 
 
 
     echo "<div class='historico'>";
 
     echo "
+    <h1>Histórico</h1>
+
     <form action='$historicoRoute' method='get'>
       <input type='date' placeholder='Digite a data para a pesquisa' name='dataa'><input type='submit' value='pesquisar'>
     </form>
@@ -60,13 +65,11 @@
 
     if (isset($_GET['pesq'])) {
       $pesq = $_GET['pesq'];
-
     } else {
       $pesq = "";
     }
 
     if (isset($_GET['dataa'])) {
-      
 
       $hoje = $_GET['dataa'];
 
@@ -100,7 +103,7 @@
       $hoje = date('Y-m-d');
 
       // Formata a data para o padrão dia/mes/ano
-      $hoje_formatado = date("d-m-Y");
+      $hoje_formatado = date("d-m-Y", strtotime($hoje));
 
       // Gera a receita de ganho na data esolhida
       $comando2 = "select sum(Valor_pago) from registros where Data = '$hoje';";
@@ -178,8 +181,8 @@
             </fieldset>
 
             <fieldset>
-            <legend>Preço</legend>
-            <p>$row[11]</p>
+            <legend>Valor</legend>
+            <p>R$ $row[11]</p>
             </fieldset>
 
             <!-- row[0] puxa o id -->

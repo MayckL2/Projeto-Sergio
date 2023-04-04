@@ -30,7 +30,7 @@ include_once($connRoute); // Inclui o arquivo de conexao
 
         <form action="<?php echo $procLoginRoute; ?>" method="post">
 
-            <h1>Sing In</h1>
+            <h1>Sign In</h1>
 
             <?php 
                 if (isset($_SESSION['msglogin'])) {

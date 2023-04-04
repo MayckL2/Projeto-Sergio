@@ -42,18 +42,18 @@ if ($existe == 0) {
 
     // Verifica se a execução ocorreu corretamente
     if (mysqli_insert_id($conn)) {
-        $_SESSION['msgregistrosim'] = "<span>Registro realizado com sucesso</span>";
+        $_SESSION['msgregistrosim'] = "<p>Registro realizado com sucesso</p>";
         // se sim o usuário irá pra pagina lista
         header("Location: ". $listaRoute);
     } else {
-        $_SESSION['msgregistronao'] = "<span style='color:red;'>Registro não foi realizado</span>";
+        $_SESSION['msgregistronao'] = "<p style='color:red;'>Registro não foi realizado</p>";
         // Se não volta pro registro
         header("Location: " . $registroRoute);
     }
     
 } else {
 
-    $_SESSION['msgregistronao'] = "<p style = 'color: red';>Placa já está cadastrada e não possui um fechamento ainda<p>";
+    $_SESSION['msgregistronao'] = "Placa em aberto no sistema";
     header("Location: " . $registroRoute);
 
 
