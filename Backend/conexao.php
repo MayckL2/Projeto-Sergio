@@ -1,10 +1,10 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = '';
+$host = "bancomayck2dt-server.mysql.database.azure.com";
+$user = "pricjucmeq";
+$pass = 'W5W5086C75UDOJ7K';
 // $user = "teste";
 // $pass = 'P4$sword';
-$dbname = "estacionamento";
+$dbname = "bancomayck2dt-database";
 
 // Criar a conexao com o Banco de Dados
 try {
